@@ -1,5 +1,5 @@
 # Needy Streamer Overload
-Rainmeter Skins inspired by the visual novel, Needy Streamer Overload.
+Rainmeter Skins inspired by the visual novel, [Needy Streamer Overload](https://store.steampowered.com/app/1451940/NEEDY_STREAMER_OVERLOAD/).
 ![Features](Preview/Features.png)
 
 ## Skins
@@ -25,6 +25,12 @@ Rainmeter Skins inspired by the visual novel, Needy Streamer Overload.
   - Will be planning to make weather icons soon!
 - Recycle Bin will give you enough dosage of Magic Paper...
   - Right click to see what's inside... is it junk?
+- ![Ame](@Resources/Images/ame_pissed.png)
+
+## Warning
+It may look cute, but the skin still contains dialogues that contains self-harm, drugs, and sexual references. Any incidents happen will not be held responsible by the creator of this skin, so make sure you do NOT try any of the more extreme or depressing actions at home.
+
+![Warning](Preview/Warning.png)
 
 ## Credits
 - NSO [Discord Server](https://discord.com/invite/JNGgNCX6Ue) for the JINE chats!
