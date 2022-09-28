@@ -28,7 +28,7 @@ Rainmeter Skins inspired by the visual novel, [Needy Streamer Overload](https://
 - ![Ame](@Resources/Images/ame_pissed.png)
 
 ## Warning
-It may look cute, but the skin still contains dialogues that contains self-harm, drugs, and sexual references. Any incidents happen will not be held responsible by the creator of this skin, so make sure you do NOT try any of the more extreme or depressing actions at home.
+It may look cute, but the skin still contains dialogues that depicts self-harm, drugs, and sexual references. Any incidents happen will not be held responsible by the creator of this skin, so make sure you do NOT try any of the more extreme or depressing actions at home.
 
 ![Warning](Preview/Warning.png)
 
