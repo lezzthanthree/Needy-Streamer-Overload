@@ -34,3 +34,7 @@ It may look cute, but the skin still contains dialogues that depicts self-harm, 
 
 ## Credits
 - NSO [Discord Server](https://discord.com/invite/JNGgNCX6Ue) for the JINE chats!
+
+---
+
+[<img src="Preview/sp.png" alt="smilie pop" width="150"/>](https://www.youtube.com/c/SmiliePop)[<img src="Preview/lezzthanthree.png" alt="lezzthanthree" width="150"/>](https://reddit.com/user/lezzthanthree)
