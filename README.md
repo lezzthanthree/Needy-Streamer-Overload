@@ -33,7 +33,7 @@ It may look cute, but the skin still contains dialogues that depicts self-harm, 
 ![Warning](Preview/Warning.png)
 
 ## Credits
-- NSO [Discord Server](https://discord.com/invite/JNGgNCX6Ue) for the JINE chats!
+- Frostworth#0529 from the NSO [Discord Server](https://discord.com/invite/JNGgNCX6Ue) for the JINE chats!
 
 ---
 
