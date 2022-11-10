@@ -63,6 +63,8 @@ Weather Information must be added by the user. Follow the [Weather Installation]
 
 <img src="Preview\Weather%20Tutorial\3.png" alt="smilie pop" width="300"/><img src="Preview\Weather%20Tutorial\4.png" alt="smilie pop" width="300"/>
 
+(Please wait for an hour or so to activate your API key.)
+
 <!---
 1. Go to openweathermap.org.
 2. Search for your city.
