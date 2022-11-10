@@ -12,6 +12,11 @@ Rainmeter Skins inspired by the visual novel, [NEEDY STREAMER OVERLOAD](https://
 - [Desktop Icons](#desktop-icons)
 - [Trash Bin](#trash-bin)
 
+# Rainmeter Installation
+To get the skin, you need to install Rainmeter. Go to this [page](https://www.rainmeter.net/) for installation.
+
+Once done, you can download the `.rmskin` file on the [Releases](https://github.com/lezzthanthree/Needy-Streamer-Overload/releases).
+
 # Features
 ## Task Manager
 Task Manager shows information about your computer performance (Uptime, CPU, RAM, and Disk Space). It is heavily inspired by the Task Manager from the game.  
