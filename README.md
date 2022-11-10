@@ -1,6 +1,6 @@
 # Needy Streamer Overload Rainmeter Skins
 Rainmeter Skins inspired by the visual novel, [NEEDY STREAMER OVERLOAD](https://store.steampowered.com/app/1451940/NEEDY_STREAMER_OVERLOAD/) (also known as NEEDY GIRL OVERDOSE).
-![Features](Preview/Features.png)
+![Features](Preview/Features_1.png)
 
 # Skins
 - [Task Manager](#task-manager)
