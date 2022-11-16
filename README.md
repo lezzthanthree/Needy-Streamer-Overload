@@ -59,9 +59,9 @@ Weather Information must be added by the user. Follow the [Weather Installation]
 
 ### Weather Installation
 
-<img src="Preview\Weather%20Tutorial\1.png" alt="smilie pop" width="300"/><img src="Preview\Weather%20Tutorial\2.png" alt="smilie pop" width="300"/>
+<img src="Preview\Weather%20Installation\1.png" alt="Tutorial" width="300"/><img src="Preview\Weather%20Installation\2.png" alt="Tutorial" width="300"/>
 
-<img src="Preview\Weather%20Tutorial\3.png" alt="smilie pop" width="300"/><img src="Preview\Weather%20Tutorial\4.png" alt="smilie pop" width="300"/>
+<img src="Preview\Weather%20Installation\3.png" alt="Tutorial" width="300"/><img src="Preview\Weather%20Installation\4.png" alt="Tutorial" width="300"/>
 
 (Please wait for an hour or so to activate your API key.)
 
