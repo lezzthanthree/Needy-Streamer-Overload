@@ -11,8 +11,6 @@ Group=Debug
 Meter=STRING
 Text=Debugger
 FontFace=DinkieBitmap 7px
-;X=120
-;Y=50
 X=420
 Y=22
 FontSize=12
@@ -65,24 +63,26 @@ Group=Debug
 Measure = Calc
 Formula = Counter % 1
 ifCondition = Stress > 1
-ifTrueAction = [!SetOption Stress Formula 0]
+ifTrueAction = [!SetOption Stress Formula -1]
 ifCondition2 = Affection > 2
 ifTrueAction2 = [!SetOption Affection Formula 0]
 ifCondition3 = Darkness > 2
 ifTrueAction3 = [!SetOption Darkness Formula 0]
 ifCondition4 = ScreenHours > 1200
 ifTrueAction4 = [!SetOption ScreenHours Formula 0]
-ifCondition5 = Variation > 1
+ifCondition5 = (Variation > 1) && (Stress <> -1)
 ifTrueAction5 = [!SetOption Variation Formula 0]
-ifCondition6 = ScreenSaverRandomizer > 2
-ifTrueAction6 = [!SetOption ScreenSaverRandomizer Formula 0]
+ifCondition6 = (Variation > 1) && (Stress = -1)
+ifTrueAction6 = [!SetOption Variation Formula 0]
+ifCondition7 = ScreenSaverRandomizer > 2
+ifTrueAction7 = [!SetOption ScreenSaverRandomizer Formula 0]
 DynamicVariables=1
 Group=Debug
 
 [StressIncrease]
 Meter=Image
 ImageName=#@#Images\Task Manager\icon_status_stress.png
-LeftMouseDownAction=[!SetOption Stress Formula [Stress]+1]
+LeftMouseDownAction=[!SetOption Stress Formula [Stress]+1][!DisableMeasure MeasureCPU]
 X=420
 Y=42
 Group=Debug
@@ -90,7 +90,7 @@ Group=Debug
 [AffectionIncrease]
 Meter=Image
 ImageName=#@#Images\Task Manager\icon_status_love.png
-LeftMouseDownAction=[!SetOption Affection Formula [Affection]+1]
+LeftMouseDownAction=[!SetOption Affection Formula [Affection]+1][!DisableMeasure MeasureMemoryPercentage]
 X=420
 Y=102
 Group=Debug
@@ -98,7 +98,7 @@ Group=Debug
 [DarknessIncrease]
 Meter=Image
 ImageName=#@#Images\Task Manager\icon_status_yami.png
-LeftMouseDownAction=[!SetOption Darkness Formula [Darkness]+1]
+LeftMouseDownAction=[!SetOption Darkness Formula [Darkness]+1][!DisableMeasure MeasureDiskPercentage]
 X=420
 Y=162
 Group=Debug
@@ -122,7 +122,7 @@ Group=Debug
 [VariationChange]
 Meter=Image
 ImageName=#@#Images\Media Player\Next.png
-LeftMouseDownAction=[!SetOption Variation UpdateRandom "0"][!SetOption Variation UpdateDivider "1"][!SetOption Variation Formula [Variation]+1]
+LeftMouseDownAction=[!DisableMeasure VariationRandomizer][!DisableMeasure VariationChangeClock][!SetOption Variation Formula [Variation]+1]
 X=430
 Y=272
 Group=Debug
