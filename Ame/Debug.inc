@@ -42,8 +42,11 @@ AntiAlias=1
 X=480
 Y=42
 StringAlign=Left
-Text="Stress: %1 #CRLF#Affection: %2 #CRLF#Darkness: %3 #CRLF#UpdatesIn: %4/#SystemInfoUpdate# #CRLF#Frame: %5 #CRLF#Variation: %6 #CRLF#Folder: %7/%8/%9/%6 #CRLF#RandomizesIn: %10/#VarRand# #CRLF#ScreenTime: %11 #CRLF#Hours: %12 #CRLF#Background: %13 #CRLF#ScreenSaver: %14  #CRLF#Headpats: %15 #CRLF#"
+Text="Stress: %1 #CRLF#Affection: %2 #CRLF#Darkness: %3 #CRLF#UpdatesIn: %4/#SystemInfoUpdate# #CRLF#Frame: %5 #CRLF#Variation: %6 #CRLF#IdleFolder: %7/%8/%9/%6 #CRLF#CurrentFolder: (Hover) #CRLF#RandomizesIn: %10/#VarRand# #CRLF#ScreenTime: %11 #CRLF#Hours: %12 #CRLF#Background: %13 #CRLF#ScreenSaver: %14  #CRLF#Headpats: %15 #CRLF#"
+ToolTipText=#SpritePath#
+clipString = 1
 Group=Debug
+DynamicVariables=1
 
 [SystemInfoClock]
 Measure = Calc
@@ -85,6 +88,7 @@ ImageName=#@#Images\Task Manager\icon_status_stress.png
 LeftMouseDownAction=[!SetOption Stress Formula [Stress]+1][!DisableMeasure MeasureCPU]
 X=420
 Y=42
+ToolTipText=Increase Stress
 Group=Debug
 
 [AffectionIncrease]
@@ -93,6 +97,7 @@ ImageName=#@#Images\Task Manager\icon_status_love.png
 LeftMouseDownAction=[!SetOption Affection Formula [Affection]+1][!DisableMeasure MeasureMemoryPercentage]
 X=420
 Y=102
+ToolTipText=Increase Affection
 Group=Debug
 
 [DarknessIncrease]
@@ -101,6 +106,7 @@ ImageName=#@#Images\Task Manager\icon_status_yami.png
 LeftMouseDownAction=[!SetOption Darkness Formula [Darkness]+1][!DisableMeasure MeasureDiskPercentage]
 X=420
 Y=162
+ToolTipText=Increase Darkness
 Group=Debug
 
 [HourIncrease]
@@ -109,15 +115,18 @@ ImageName=#@#Images\Task Manager\icon_status_follower.png
 LeftMouseDownAction=[!SetOption ScreenHours Formula [ScreenHours]+50]
 X=420
 Y=222
+ToolTipText=Increase ScreenTime Hours by 50
 Group=Debug
 
-[ScreenSaverChange]
+[OpenSprite]
 Meter=Image
 ImageName=#@#Images\Desktop Icons\Icons\icon_picture.png
-LeftMouseDownAction=[!SetOption ScreenSaverRandomizer Formula [ScreenSaverRandomizer]+1]
+LeftMouseDownAction=["#SpritePath#"]
 X=480
 Y=200
 Group=Debug
+ToolTipText=Open the current sprite location.
+DynamicVariables=1
 
 [VariationChange]
 Meter=Image
@@ -125,6 +134,7 @@ ImageName=#@#Images\Media Player\Next.png
 LeftMouseDownAction=[!DisableMeasure VariationRandomizer][!DisableMeasure VariationChangeClock][!SetOption Variation Formula [Variation]+1]
 X=430
 Y=272
+ToolTipText=Change the Variation of the Sprite.
 Group=Debug
 
 [HeadpatHitboxShow]
@@ -133,6 +143,7 @@ ImageName=#@#Images\Desktop Icons\Icons\hearts.png
 LeftMouseDownAction=[!SetOption HeadpatHitbox FillColor "FillColor 0,0,0,100"]
 X=530
 Y=200
+ToolTipText=Show the Headpat Hitbox
 Group=Debug
 
 [Edit]
@@ -141,6 +152,7 @@ ImageName=#@#Images\Desktop Icons\Icons\icon_gear.png
 LeftMouseDownAction=[!EditSkin]
 X=480
 Y=240
+ToolTipText=Edit the Ame.ini skin
 Group=Debug
 
 [RefreshSkin]
