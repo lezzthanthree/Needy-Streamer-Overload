@@ -1,6 +1,6 @@
 # Needy Streamer Overload Rainmeter Skins
 Rainmeter Skins inspired by the visual novel, [NEEDY STREAMER OVERLOAD](https://store.steampowered.com/app/1451940/NEEDY_STREAMER_OVERLOAD/) (also known as NEEDY GIRL OVERDOSE).
-![Features](Preview/Features_1.png)
+![Features](Preview/Features_2.png)
 
 # Skins
 - [Task Manager](#task-manager)
@@ -10,6 +10,7 @@ Rainmeter Skins inspired by the visual novel, [NEEDY STREAMER OVERLOAD](https://
 - [Calendar](#calendar)
     - [Weather Installation](#weather-installation)
 - [Desktop Icons](#desktop-icons)
+- [Quick Notes](#quick-notes)
 - [Trash Bin](#trash-bin)
 
 # Rainmeter Installation
@@ -84,6 +85,14 @@ A recreation of the desktop icons from the game. Pixel Icons! Now, you won't get
 
 - You can add your own icons by simply copy and pasting one folder and editing the `.ini` file.
 - Icons are available inside the [@Resources](@Resources/Images/Desktop%20Icons/) folder.
+
+## Quick Notes
+Want something to be reminded of?
+
+![Quick Notes](Preview/Showcase/Quick%20Notes%20Preview.gif)
+
+- This skin contains four variants!
+- You can also change the title according to yor likeness.
 
 ## Trash Bin
 Trash Bin is just the Recycling Bin that looks like a Magic Paper.
