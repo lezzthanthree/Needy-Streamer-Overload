@@ -92,7 +92,7 @@ Want something to be reminded of?
 ![Quick Notes](Preview/Showcase/Quick%20Notes%20Preview.gif)
 
 - This skin contains four variants!
-- You can also change the title according to yor likeness.
+- You can also change the title according to your likeness.
 
 ## Trash Bin
 Trash Bin is just the Recycling Bin that looks like a Magic Paper.
