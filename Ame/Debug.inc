@@ -4,7 +4,7 @@ Zero2=-1
 
 [DebugBG]
 Meter=SHAPE
-Shape=Rectangle 415,17,200,290 | Fill Color 155,155,155,255 | StrokeWidth 0
+Shape=Rectangle 415,17,200,300 | Fill Color 155,155,155,255 | StrokeWidth 0
 Group=Debug
 
 [DebugTitle]
@@ -34,15 +34,18 @@ MeasureName12=ScreenHours
 MeasureName13=MeasureBackground
 MeasureName14=ScreenSaverRandomizer
 MeasureName15=HeadpatCount
+MeasureName16=PlayingGame
+MeasureName17=MeasureState
+MeasureName18=Stressed
 
 FontFace=zpix
 FontSize=8
 FontColor=77,33,203
 AntiAlias=1
 X=480
-Y=42
+Y=37
 StringAlign=Left
-Text="Stress: %1 #CRLF#Affection: %2 #CRLF#Darkness: %3 #CRLF#UpdatesIn: %4/#SystemInfoUpdate# #CRLF#Frame: %5 #CRLF#Variation: %6 #CRLF#IdleFolder: %7/%8/%9/%6 #CRLF#CurrentFolder: (Hover) #CRLF#RandomizesIn: %10/#VarRand# #CRLF#ScreenTime: %11 #CRLF#Hours: %12 #CRLF#Background: %13 #CRLF#ScreenSaver: %14  #CRLF#Headpats: %15 #CRLF#"
+Text="SysVitals: %1 %2 %3 #CRLF#UpdatesIn: %4/#SystemInfoUpdate# #CRLF#Frame: %5 #CRLF#Variation: %6 #CRLF#IdleFolder: %7/%8/%9/%6 #CRLF#CurrentFolder: (Hover) #CRLF#RandomizesIn: %10/#VarRand# #CRLF#ScreenTime: %11 #CRLF#Hours: %12 #CRLF#Background: %13 #CRLF#ScreenSaver: %14  #CRLF#Headpats: %15 #CRLF#PlayingGame: %16 #CRLF#MusicState: %17 #CRLF#Stressed: %18"
 ToolTipText=#SpritePath#
 clipString = 1
 Group=Debug
@@ -67,18 +70,22 @@ Measure = Calc
 Formula = Counter % 1
 ifCondition = Stress > 1
 ifTrueAction = [!SetOption Stress Formula -1]
-ifCondition2 = Affection > 2
+ifCondition2 = (Affection > 2) && (Stress = 0)
 ifTrueAction2 = [!SetOption Affection Formula 0]
-ifCondition3 = Darkness > 2
-ifTrueAction3 = [!SetOption Darkness Formula 0]
-ifCondition4 = ScreenHours > 1200
-ifTrueAction4 = [!SetOption ScreenHours Formula 0]
-ifCondition5 = (Variation > 1) && (Stress <> -1)
-ifTrueAction5 = [!SetOption Variation Formula 0]
-ifCondition6 = (Variation > 1) && (Stress = -1)
-ifTrueAction6 = [!SetOption Variation Formula 0]
-ifCondition7 = ScreenSaverRandomizer > 2
-ifTrueAction7 = [!SetOption ScreenSaverRandomizer Formula 0]
+ifCondition3 = (Affection > 2) && (Stress = 1)
+ifTrueAction3 = [!SetOption Affection Formula -1][!SetOption Darkness Formula -1]
+ifCondition4 = Darkness > 2 && (Stress = 0)
+ifTrueAction4 = [!SetOption Darkness Formula 0]
+ifCondition5 = Darkness > 2 && (Stress = 1)
+ifTrueAction5 = [!SetOption Affection Formula -1][!SetOption Darkness Formula -1]
+ifCondition6 = ScreenHours > 1200
+ifTrueAction6 = [!SetOption ScreenHours Formula 0]
+ifCondition7 = (Variation > 1) && (Stress <> -1)
+ifTrueAction7 = [!SetOption Variation Formula 0]
+ifCondition8 = (Variation > 1) && (Stress = -1)
+ifTrueAction8 = [!SetOption Variation Formula 0]
+ifCondition9 = ScreenSaverRandomizer > 2
+ifTrueAction9 = [!SetOption ScreenSaverRandomizer Formula 0]
 DynamicVariables=1
 Group=Debug
 
@@ -123,7 +130,7 @@ Meter=Image
 ImageName=#@#Images\Desktop Icons\Icons\icon_picture.png
 LeftMouseDownAction=["#SpritePath#"]
 X=480
-Y=200
+Y=210
 Group=Debug
 ToolTipText=Open the current sprite location.
 DynamicVariables=1
@@ -133,7 +140,7 @@ Meter=Image
 ImageName=#@#Images\Media Player\Next.png
 LeftMouseDownAction=[!DisableMeasure VariationRandomizer][!DisableMeasure VariationChangeClock][!SetOption Variation Formula [Variation]+1]
 X=430
-Y=272
+Y=282
 ToolTipText=Change the Variation of the Sprite.
 Group=Debug
 
@@ -142,7 +149,7 @@ Meter=Image
 ImageName=#@#Images\Desktop Icons\Icons\hearts.png
 LeftMouseDownAction=[!SetOption HeadpatHitbox FillColor "FillColor 0,0,0,100"]
 X=530
-Y=200
+Y=210
 ToolTipText=Show the Headpat Hitbox
 Group=Debug
 
@@ -151,7 +158,7 @@ Meter=Image
 ImageName=#@#Images\Desktop Icons\Icons\icon_gear.png
 LeftMouseDownAction=[!EditSkin]
 X=480
-Y=240
+Y=250
 ToolTipText=Edit the Ame.ini skin
 Group=Debug
 
@@ -164,7 +171,7 @@ FontColor=77,33,203
 fontWeight = 700   
 LeftMouseDownAction=[!RainmeterRefresh]
 X=480
-Y=282
+Y=292
 Group=Debug
 
 [GroupHide]
@@ -176,7 +183,7 @@ FontColor=77,33,203
 fontWeight=700   
 LeftMouseDownAction=[!HideMeterGroup Debug][!ShowMeter GroupShow]
 X=550
-Y=282
+Y=292
 Group=Debug
 
 [GroupShow]
@@ -188,6 +195,6 @@ FontColor=77,33,203
 fontWeight=700   
 LeftMouseDownAction=[!ShowMeterGroup Debug][!HideMeter GroupShow]
 X=550
-Y=282
+Y=292
 Group=Debug
 Hidden=1
