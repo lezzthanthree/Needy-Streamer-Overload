@@ -1,16 +1,17 @@
 function Initialize()
     -- add a new ame JINE chat here.
-        a = {}
-        a[1] = "ok"
-        a[2] = "k"
-        a[3] = "as long as you understand"
-        a[4] = "potassium"
-        a[5] = "youre just all talk huh."
-        a[6] = "wow talk about no effort"
-        a[7] = "are you suuure?"
-        a[8] = "(*'-')b"
-        a[9] = "do you even know what youre OKing at"
-        a[10] = "thanks for the zero effort"
+        a = {
+                "ok",
+                "k",
+                "as long as you understand",
+                "potassium",
+                "youre just all talk huh.",
+                "wow talk about no effort",
+                "are you suuure?",
+                "(*'-')b",
+                "do you even know what youre OKing at",
+                 "thanks for the zero effort",
+            }
 end
 
 function Update()

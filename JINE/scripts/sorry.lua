@@ -1,16 +1,17 @@
 function Initialize()
     -- add a new ame JINE chat here.
-        a = {}
-        a[1] = "never forgive you i will"
-        a[2] = "i will NEVER forgive you"
-        a[3] = "hmm.... ok i forgive you!!"
-        a[4] = "i guess i could forgive you..."
-        a[5] = "buy me some ice cream and ill forgive you"
-        a[6] = "send me a selfie of you groveling for forgiveness"
-        a[7] = "thats ok! (see im so nice)"
-        a[8] = "is that all it takes for you to get down on your knees?"
-        a[9] = "i forgive you! NOT!!!!!"
-        a[10] = "soz for making you say soz"
+        a = {
+                "never forgive you i will",
+                "i will NEVER forgive you",
+                "hmm.... ok i forgive you!!",
+                "i guess i could forgive you...",
+                "buy me some ice cream and ill forgive you",
+                "send me a selfie of you groveling for forgiveness",
+                "thats ok! (see im so nice)",
+                "is that all it takes for you to get down on your knees?",
+                "i forgive you! NOT!!!!!",
+                "soz for making you say soz",
+            }
 end
 
 function Update()
