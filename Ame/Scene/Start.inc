@@ -47,7 +47,7 @@ X=103
 Y=230
 LeftMouseUpAction=[!WriteKeyValue Variables @Include2 Scene\Ame.inc][Play "#@#Audio\execute.wav"][!RefreshApp]
 
-[Understood]
+[StartAme]
 Meter=String
 X=202
 Y=239
