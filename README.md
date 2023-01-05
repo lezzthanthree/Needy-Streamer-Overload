@@ -1,11 +1,12 @@
 # Needy Streamer Overload Rainmeter Skins
 Rainmeter Skins inspired by the visual novel, [NEEDY STREAMER OVERLOAD](https://store.steampowered.com/app/1451940/NEEDY_STREAMER_OVERLOAD/) (also known as NEEDY GIRL OVERDOSE).
-![Features](Preview/Features_2.png)
+![Features](Preview/Features_3.png)
 
 # Skins
 - [Task Manager](#task-manager)
 - [Ame](#ame)
 - [JINE](#jine)
+- [Social Media](#social-media)
 - [Media Player](#media-player)
 - [Calendar](#calendar)
     - [Weather Installation](#weather-installation)
@@ -36,6 +37,8 @@ She will change depending on your computer's performance. She'll be stressed out
 ![Ame](Preview/Showcase/Ame%20Preview.png)
 
 - Background also changes when reaching a number of Screen Time hours.
+- You can do activities with her like playing a game or watching a movie!
+- Stats are also customizable on Settings.
 
 ## JINE
 JINE is a messaging app from the game. Ame will send you random messages, so please respond her with stickers!
@@ -43,13 +46,28 @@ JINE is a messaging app from the game. Ame will send you random messages, so ple
 ![JINE](Preview/Showcase/JINE%20Preview.gif)
 
 - You can add and customize the messages inside the [`script`](JINE/scripts/) folder.
-- Skin only shows four stickers, but can be customized what emojis to show on the `.ini` file.
-- You can also change how frequent Ame will send you messages.
+- Skin only shows four stickers, but can be customized what emojis to show on Settings.
+- You can also change how frequent Ame will send you messages on Settings.
+
+## Social Media
+Pictures from KAngel and Ame from the game, now on your desktop!
+
+![Social](Preview/Showcase/Social%20Media%20Preview.gif)
+
+- The likes and retweets update in real time accoding to your screen time!
+- You can add your own tweets inside the [`script`](Social%20Media/scripts/) folder and pictures inside the [@Resources](@Resources/Images/Social%20Media/Tweets/) folder.
+- You can also change the size of the window on Settings.
 
 ## Media Player
-Media Player shows what you are listening on **Spotify**.
+Media Player shows what you are listening. Redesigned by YumeMiya#4040!
 
 ![Media Player](Preview/Showcase/Media%20Player%20Preview.gif)
+
+Available Players:
+* Spotify
+* iTunes
+* MusicBee
+* WebPlayer (needs browser extension to work)
 
 ## Calendar
 Calendar shows the current time and date, together with the weather.
@@ -100,7 +118,6 @@ Trash Bin is just the Recycling Bin that looks like a Magic Paper.
 Hovering will show the size and the number of items inside the Trash Bin.
 
 ![Trash Bin](Preview/Showcase/Trash%20Bin%20Preview.png)
-
 
 # Warning
 It may look cute, but the skin still contains dialogues that depicts self-harm, drugs, and sexual references. Any incidents happen will not be held responsible by the creator of this skin, so make sure you do NOT try any of the more extreme or depressing actions at home.
