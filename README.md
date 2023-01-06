@@ -17,7 +17,7 @@ Rainmeter Skins inspired by the visual novel, [NEEDY STREAMER OVERLOAD](https://
 # Rainmeter Installation
 To get the skin, you need to install Rainmeter. Go to this [page](https://www.rainmeter.net/) for installation.
 
-Once done, you can download the `.rmskin` file on the [Releases](https://github.com/lezzthanthree/Needy-Streamer-Overload/releases).
+Once done, you can download the `.rmskin` file on the [Releases](https://github.com/lezzthanthree/Needy-Streamer-Overload/releases). A Welcome Skin will great you once you have installed the skin!
 
 # Features
 ## Task Manager
