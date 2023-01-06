@@ -128,6 +128,7 @@ It may look cute, but the skin still contains dialogues that depicts self-harm, 
 - Frostworth#0529 from the NSO [Discord Server](https://discord.com/invite/JNGgNCX6Ue) for the JINE chats!
 - u/spuddddddddddddddddd for their [Ame Sprite Table](https://redd.it/urvi1x).
 - [Persona 5 Calendar Rainmeter Skin](https://github.com/Mive82/Persona-5-Calendar) for the OpenWeatherMap API Code.
+- YumeMiya#4040 for redesigning the Media Player and creating icons on certain skins!
 ---
 
 [<img src="Preview/Watermark/sp.png" alt="smilie pop" width="150"/>](https://www.youtube.com/c/SmiliePop)[<img src="Preview/Watermark/lezzthanthree.png" alt="lezzthanthree" width="150"/>](https://reddit.com/user/lezzthanthree)
