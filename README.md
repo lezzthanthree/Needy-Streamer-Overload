@@ -54,7 +54,7 @@ Pictures from KAngel and Ame from the game, now on your desktop!
 
 ![Social](Preview/Showcase/Social%20Media%20Preview.gif)
 
-- The likes and retweets update in real time accoding to your screen time!
+- The likes and retweets update in real time according to your screen time!
 - You can add your own tweets inside the [`script`](Social%20Media/scripts/) folder and pictures inside the [@Resources](@Resources/Images/Social%20Media/Tweets/) folder.
 - You can also change the size of the window on Settings.
 
