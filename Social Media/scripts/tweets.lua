@@ -680,6 +680,11 @@ function Initialize()
 function Update()
     -- Get SavedImage number
     tweet = tonumber(SKIN:GetVariable('SavedImage', '0'))
+    
+    if (tweet == (85) + (.2))
+    then
+        return "The cake is a lie."
+    end
 
     -- Get Total Followers
     followers = SKIN:GetMeasure('Followers')
