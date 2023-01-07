@@ -19,6 +19,7 @@ IfTrueAction=[!WriteKeyValue Variables Height 354][!SetOption Image H 354][!SetV
 IfCondition2=(HeightImage >= 684)
 IfTrueAction2=[!WriteKeyValue Variables Height 684][!SetOption Image H 684][!SetVariable Height 684][!UpdateMeter Background][!Redraw]
 
+
 [Failsafe]
 X=(596/2)-7
 Y=(#Height#/2)+26
