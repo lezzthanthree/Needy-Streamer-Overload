@@ -2,7 +2,7 @@
 Measure=Plugin
 Plugin=ActionTimer
 ActionList1=Wait 60000 | New | DoOver
-New=[!WriteKeyValue Variables SavedImage [NextImage] "#CURRENTPATH#Settings\Settings.inc"][!Refresh]
+New=[!WriteKeyValue Variables SavedImage [NextImage] "#@#Settings\Social Media\Settings.inc"][!Refresh]
 DoOver=[!CommandMeasure SlideshowStart "Execute 1"]
 
 [SlideshowOption]
