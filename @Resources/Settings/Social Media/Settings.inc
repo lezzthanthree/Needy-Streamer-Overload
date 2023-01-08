@@ -1,13 +1,13 @@
 [Variables]
-SavedImage=87
+SavedImage=0
 NumberOfImages=89
 @Include=TweetOptions\Hover.inc
-@Include2=Slideshow\Disabled.inc
-@Include3=Window\Large.inc
+@Include2=Slideshow\Enabled.inc
+@Include3=Window\WindowMatch.inc
 
 [NextImage]
-Formula=(#SavedImage# + 1) % #NumberOfImages#
+Formula=Random
 
 [NextImageOption]
 Measure=Calc
-Formula=1
+Formula=0
