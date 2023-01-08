@@ -7,7 +7,7 @@ Plugin=Plugins\NowPlaying.dll
 
 [MeasurePlayer]
 Measure=NowPlaying
-PlayerName=CAD
+PlayerName=
 
 [MeasureWebPlayer]
 Measure=Plugin
@@ -15,6 +15,6 @@ Plugin=WebNowPlaying
 
 [ChosenPlayer]
 Measure=Calc
-Formula=2
+Formula=0
 ifEqualValue = 0
 ifEqualAction = [!SetOption MeterTitle Text "Click the gear icon and select a player!"]
