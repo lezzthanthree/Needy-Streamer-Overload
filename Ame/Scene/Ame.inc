@@ -13,6 +13,8 @@ SpritePath=#@#\Images\Ame\sprites\[Stress]\[Affection]\[Darkness]\[Variation]
 @Include=#@#\Settings\Ame\Programs.inc
 @Include2=#@#\Settings\Ame\Task Manager.inc
 
+ActivityWindowOffset=40
+
 ; ===== Window =====
 
 [Background]
@@ -154,8 +156,8 @@ IfEqualAction = [Play "#@#\Audio\nadenade_2.wav"][!SetOption HeadpatStatus Formu
 [ActivityWindow]
 Meter=IMAGE
 ImageName=#@#Images\Ame\menu\window.png
-X=50
-Y=50
+X=#ActivityWindowOffset#
+Y=#ActivityWindowOffset#
 AntiAlias=1
 Hidden=1
 Group=Activity
@@ -164,8 +166,8 @@ Group=Activity
 Meter=STRING
 Text="Activities"
 FontFace=DinkieBitmap 7px
-X=84
-Y=64
+X=(34 + #ActivityWindowOffset#)
+Y=(14 + #ActivityWindowOffset#)
 FontSize=12
 FontColor=77,35,207
 Hidden=1
@@ -173,8 +175,8 @@ Group=Activity
 
 [ActivityClose]
 Meter=IMAGE
-X=522
-Y=61
+X=(472 + #ActivityWindowOffset#)
+Y=(11 + #ActivityWindowOffset#)
 ImageName=#@#Images\button_close.png
 LeftMouseUpAction=[!HideMeterGroup Activity][Play "#@#\Audio\close.wav"][!ShowMeter Activities][!Redraw]
 Hidden=1
@@ -185,8 +187,8 @@ Meter=STRING
 Text="Activities"
 FontFace=Zpix
 FontColor=77,35,207
-X=180
-Y=132
+X=(130 + #ActivityWindowOffset#)
+Y=(82 + #ActivityWindowOffset#)
 FontSize=18
 Hidden=1
 Group=Activity
@@ -194,8 +196,8 @@ Group=Activity
 [Game]
 Meter=Image
 ImageName=#@#Images\Ame\menu\game.png
-X=175
-Y=180
+X=(125 + #ActivityWindowOffset#)
+Y=(130 + #ActivityWindowOffset#)
 Hidden=1
 LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter Activities][!HideMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\-1\[*Affection*]\[*Darkness*]\0"][!Redraw]
 Group=Activity
@@ -215,8 +217,8 @@ Group=Activity
 [Movie]
 Meter=Image
 ImageName=#@#Images\Ame\menu\movie.png
-X=270
-Y=180
+X=(220 + #ActivityWindowOffset#)
+Y=(130 + #ActivityWindowOffset#)
 Hidden=1
 LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter Activities][!HideMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\-1\[*Affection*]\[*Darkness*]\1"][!Redraw]
 Group=Activity
@@ -233,30 +235,30 @@ StringAlign = Center
 Hidden=1
 Group=Activity
 
-; [CheckHour]
-; Measure=Time
-; Format=%H
+[CheckHour]
+Measure=Time
+Format=%H
 
-; [CheckTime]
-; Measure=Calc
-; DynamicVariables=1
-; Formula=[CheckHour]
-; ifCondition = (CheckTime >= 19) || (CheckTime <= 5)
-; ifTrueAction = [!SetOption Stream LeftMouseUpAction """[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!WriteKeyValue Variables @Include2 "Scene\Transition.inc"][!Refresh]"""][!SetOption Stream Greyscale 0][!UpdateMeter Stream][!Redraw]
-; ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpAction ""]
+[CheckTime]
+Measure=Calc
+DynamicVariables=1
+Formula=[CheckHour]
+ifCondition = (CheckTime >= 0) || (CheckTime <= 23)
+ifTrueAction = [!SetOption Stream LeftMouseUpAction """[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!WriteKeyValue Variables @Include2 "Scene\Transition.inc"][!Refresh]"""][!SetOption Stream Greyscale 0][!UpdateMeter Stream][!Redraw]
+ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpAction ""]
 
 [Stream]
 Meter=Image
 ImageName=#@#Images\Ame\menu\youtube.png
-X=365
-Y=180
+X=(315 + #ActivityWindowOffset#)
+Y=(130 + #ActivityWindowOffset#)
 Greyscale=1
 Hidden=1
 Group=Activity
 
 [StreamLabel]
 Meter=STRING
-Text="[Soon]"
+Text="Stream"
 FontFace=DinkieBitmap 7px
 X=33r
 Y=6R
@@ -269,8 +271,8 @@ Group=Activity
 [Idle]
 Meter=Image
 ImageName=#@#Images\Ame\menu\ame.png
-X=460
-Y=180
+X=(410 + #ActivityWindowOffset#)
+Y=(130 + #ActivityWindowOffset#)
 Hidden=1
 LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter Activities][!ShowMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\[*Stress*]\[*Affection*]\[*Darkness*]\[*Variation*]"][!Redraw]
 Group=Activity
