@@ -10,3 +10,7 @@ LocationCode=Paste Here!
 
 ; You also have to get a free API key by registering
 ApiKey=Paste Here!
+
+TimeFormat1224=12
+
+Units=metric
