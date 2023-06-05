@@ -4,7 +4,8 @@
 ; 500 = saves CPU Usage, slow animation [2FPS]
 ; 250 = moderate CPU Usage, smooth animation [Default] [4FPS]
 ; 200 = high CPU Usage, smooth animation. [5FPS]
-Update=250 
+; 100 = higher CPU Usage, game-accurate animation. [5FPS]
+Update=100 
 
 [Variables]
 SpritePath=#@#\Images\Ame\sprites\[Stress]\[Affection]\[Darkness]\[Variation]
@@ -12,45 +13,44 @@ SpritePath=#@#\Images\Ame\sprites\[Stress]\[Affection]\[Darkness]\[Variation]
 ; Change Ame's Sprite to playing/watching when a program has detected.
 @Include=#@#\Settings\Ame\Programs.inc
 @Include2=#@#\Settings\Ame\Task Manager.inc
-
 ActivityWindowOffset=40
 
 ; ===== Window =====
 
 [Background]
 Meter=IMAGE
-ImageName=#@#Images\Ame\#Width#
-AntiAlias=1
+ImageName=#@#Images\Shared\border\window-ame.png
+AntiAlias=0
 
 [WindowTitles]
 Meter=STRING
 Text="Webcam"
 FontFace=DinkieBitmap 7px
-X=34
-Y=14
-FontSize=12
+X=((#Width# / 348) * 17)
+Y=((#Width# / 348) * 7)
+FontSize=((#Width# / 348) * 6)
 FontColor=77,35,207
 
 [Close]
 Meter=IMAGE
-X=(#Width# - 16)
-Y=11
-ImageName=#@#Images\button_close.png
+X=(#Width# - ((#Width# / 348) * 8))
+Y=((#Width# / 348) * 5)
+ImageName=#@#Images\Shared\button\button_close.png
 LeftMouseUpAction=[!SetOption ImageNumberCalc Formula 0][!SetOption Ame Path "#@#Images\Ame\sprites\stream"][Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
 
 [Settings]
 Meter=IMAGE
-X=-24r
-Y=11
-ImageName=#@#Images\Ame\button_gear.png
+X=-13r
+Y=((#Width# / 348) * 5)
+ImageName=#@#Images\Shared\button\button_gear.png
 LeftMouseUpAction=[!ToggleConfig "Needy Streamer Overload\Ame\Settings" "Settings.ini"]
 DynamicVariables=1
 
 [Activities]
 Meter=IMAGE
-X=-24r
-Y=11
-ImageName=#@#Images\Ame\button_heart.png
+X=-11r
+Y=((#Width# / 348) * 5)
+ImageName=#@#Images\Shared\button\button_heart.png
 LeftMouseUpAction=[!ShowMeterGroup Activity][Play "#@#\Audio\open.wav"][!Redraw]
 DynamicVariables=1
 
@@ -59,12 +59,12 @@ DynamicVariables=1
 [BackgroundStream]
 Meter=IMAGE
 MeasureName=MeasureBackground
-X=8
-Y=42
+X=((#Width# / 348) * 4)
+Y=((#Width# / 348) * 20)
 DynamicVariables=1
 Path=#@#Images\Ame\bg\
 W=#Width#
-AntiAlias=1
+AntiAlias=0
 
 [ScreenSaverRandomizer]
 Measure=Calc
@@ -75,12 +75,12 @@ HighBound=2
 [ScreenSaver]
 Meter=IMAGE
 MeasureName=ScreenSaverRandomizer
-X=8
-Y=42
+X=((#Width# / 348) * 4)
+Y=((#Width# / 348) * 20)
 Path=#@#Images\Ame\bg_screensaver\
 W=#Width#
 DynamicVariables=1
-AntiAlias=1
+AntiAlias=0
 
 ; ===== Ame Animation ===== 
 
@@ -108,8 +108,8 @@ DynamicVariables=1
 Meter=IMAGE
 MeasureName=ImageNumberCalc
 DynamicVariables=1
-X=8
-Y=42
+X=((#Width# / 348) * 4)
+Y=((#Width# / 348) * 20)
 Path=#SpritePath#
 W=#Width#
 AntiAlias=1
@@ -118,7 +118,7 @@ AntiAlias=1
 
 [HeadpatHitbox]
 Meter=SHAPE
-Shape=Rectangle ((#Width#/2) - 30),80,80,50 | Extend FillColor | StrokeWidth 0
+Shape=Rectangle ((#Width#/2) - ((#Width# / 348) * 30)),((#Width# / 348) * 40),((#Width# / 348) * 80),((#Width# / 348) * 50) | Extend FillColor | StrokeWidth 0
 FillColor=FillColor 0,0,0,0
 MouseOverAction=[!ShowMeter HeadpatDialogue][!SetOption HeadpatStatus Formula 0][!SetVariable SpritePath  "#@#Images\Ame\sprites\0\[*Affection*]\[*Darkness*]\1"][!Redraw]
 MouseLeaveAction=[!HideMeter HeadpatDialogue][!SetOption HeadpatStatus Formula 0][!SetVariable SpritePath  "#@#Images\Ame\sprites\[*Stress*]\[*Affection*]\[*Darkness*]\[*Variation*]"][!Redraw]
@@ -135,8 +135,8 @@ HighBound=4
 Meter=Image
 MeasureName=HeadpatStatus
 Path=#@#Images\Ame\dialogue\
-X=8
-Y=42
+X=((#Width# / 348) * 4)
+Y=((#Width# / 348) * 20)
 W=#Width#
 Hidden=1
 DynamicVariables=1
@@ -158,7 +158,7 @@ Meter=IMAGE
 ImageName=#@#Images\Ame\menu\window.png
 X=#ActivityWindowOffset#
 Y=#ActivityWindowOffset#
-AntiAlias=1
+AntiAlias=0
 Hidden=1
 Group=Activity
 
@@ -166,18 +166,18 @@ Group=Activity
 Meter=STRING
 Text="Activities"
 FontFace=DinkieBitmap 7px
-X=(34 + #ActivityWindowOffset#)
-Y=(14 + #ActivityWindowOffset#)
-FontSize=12
+X=(17 + #ActivityWindowOffset#)
+Y=(7 + #ActivityWindowOffset#)
+FontSize=6
 FontColor=77,35,207
 Hidden=1
 Group=Activity
 
 [ActivityClose]
 Meter=IMAGE
-X=(472 + #ActivityWindowOffset#)
-Y=(11 + #ActivityWindowOffset#)
-ImageName=#@#Images\button_close.png
+X=(236 + #ActivityWindowOffset#)
+Y=(5 + #ActivityWindowOffset#)
+ImageName=#@#Images\Shared\button\button_close.png
 LeftMouseUpAction=[!HideMeterGroup Activity][Play "#@#\Audio\close.wav"][!ShowMeter Activities][!Redraw]
 Hidden=1
 Group=Activity
@@ -187,17 +187,17 @@ Meter=STRING
 Text="Activities"
 FontFace=Zpix
 FontColor=77,35,207
-X=(130 + #ActivityWindowOffset#)
-Y=(82 + #ActivityWindowOffset#)
-FontSize=18
+X=(65 + #ActivityWindowOffset#)
+Y=(41 + #ActivityWindowOffset#)
+FontSize=9
 Hidden=1
 Group=Activity
 
 [Game]
 Meter=Image
 ImageName=#@#Images\Ame\menu\game.png
-X=(125 + #ActivityWindowOffset#)
-Y=(130 + #ActivityWindowOffset#)
+X=(62 + #ActivityWindowOffset#)
+Y=(65 + #ActivityWindowOffset#)
 Hidden=1
 LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter Activities][!HideMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\-1\[*Affection*]\[*Darkness*]\0"][!Redraw]
 Group=Activity
@@ -206,9 +206,9 @@ Group=Activity
 Meter=STRING
 Text="Play Game"
 FontFace=DinkieBitmap 7px
-X=33r
-Y=6R
-FontSize=12
+X=16r
+Y=3R
+FontSize=6
 FontColor=77,35,207
 StringAlign = Center
 Hidden=1
@@ -217,8 +217,8 @@ Group=Activity
 [Movie]
 Meter=Image
 ImageName=#@#Images\Ame\menu\movie.png
-X=(220 + #ActivityWindowOffset#)
-Y=(130 + #ActivityWindowOffset#)
+X=(110 + #ActivityWindowOffset#)
+Y=(65 + #ActivityWindowOffset#)
 Hidden=1
 LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter Activities][!HideMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\-1\[*Affection*]\[*Darkness*]\1"][!Redraw]
 Group=Activity
@@ -227,9 +227,9 @@ Group=Activity
 Meter=STRING
 Text="Streaming#CRLF#Service"
 FontFace=DinkieBitmap 7px
-X=33r
-Y=6R
-FontSize=12
+X=15r
+Y=3R
+FontSize=6
 FontColor=77,35,207
 StringAlign = Center
 Hidden=1
@@ -250,8 +250,8 @@ ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpActio
 [Stream]
 Meter=Image
 ImageName=#@#Images\Ame\menu\youtube.png
-X=(315 + #ActivityWindowOffset#)
-Y=(130 + #ActivityWindowOffset#)
+X=(157 + #ActivityWindowOffset#)
+Y=(65 + #ActivityWindowOffset#)
 Greyscale=1
 Hidden=1
 Group=Activity
@@ -260,9 +260,9 @@ Group=Activity
 Meter=STRING
 Text="Stream"
 FontFace=DinkieBitmap 7px
-X=33r
-Y=6R
-FontSize=12
+X=16r
+Y=3R
+FontSize=6
 FontColor=77,35,207
 StringAlign = Center
 Hidden=1
@@ -271,8 +271,8 @@ Group=Activity
 [Idle]
 Meter=Image
 ImageName=#@#Images\Ame\menu\ame.png
-X=(410 + #ActivityWindowOffset#)
-Y=(130 + #ActivityWindowOffset#)
+X=(205 + #ActivityWindowOffset#)
+Y=(65 + #ActivityWindowOffset#)
 Hidden=1
 LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter Activities][!ShowMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\[*Stress*]\[*Affection*]\[*Darkness*]\[*Variation*]"][!Redraw]
 Group=Activity
@@ -281,9 +281,9 @@ Group=Activity
 Meter=STRING
 Text="Idle"
 FontFace=DinkieBitmap 7px
-X=33r
-Y=6R
-FontSize=12
+X=17r
+Y=3R
+FontSize=6
 FontColor=77,35,207
 StringAlign = Center
 Hidden=1
