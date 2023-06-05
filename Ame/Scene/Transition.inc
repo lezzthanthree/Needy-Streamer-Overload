@@ -16,22 +16,24 @@ Zero=-1
 [Background]
 Meter=IMAGE
 ImageName=#@#Images\Shared\border\window-golive.png
-AntiAlias=1
+W=(#Scale# * 370)
+AntiAlias=0
 
 [WindowTitles]
 Meter=STRING
 Text="Transform!"
 FontFace=DinkieBitmap 7px
 LeftMouseUpAction=[!SetOption Transformation Path "#@#\Images\Ame\transformation_dark"][!Redraw]
-X=((#Width# / 348) * 17)
-Y=((#Width# / 348) * 7)
-FontSize=((#Width# / 348) * 6)
+X=(#Scale# * 17)
+Y=(#Scale# * 7)
+FontSize=(#Scale# * 6)
 FontColor=77,35,207
 
 [Close]
 Meter=IMAGE
-X=((#Width# / 348) * 360)
-Y=((#Width# / 348) * 5)
+X=(#Scale# * 360)
+Y=(#Scale# * 5)
+W=(#Scale# * 10)
 ImageName=#@#Images\Shared\border\button_close.png
 LeftMouseUpAction=[!SetOption ImageNumberCalc Formula 0][!SetOption Ame Path "#@#Images\Ame\sprites\"][!WriteKeyValue Variables @Include2 "Scene\Ame.inc"][Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
 
@@ -45,11 +47,11 @@ DynamicVariables = 1
 [Transformation]
 Meter=Image
 MeasureName=ImageNumberCalc
-X=((#Width# / 348) * 4)
-Y=((#Width# / 348) * 20)
+X=(#Scale# * 4)
+Y=(#Scale# * 20)
 LeftMouseUpAction=[!CommandMeasure ActionTimer "Stop 1"][Play "#@#\Audio\open.wav"][!WriteKeyValue Variables @Include2 "Scene\Stream.inc"][!Refresh]
 Path=#@#\Images\Ame\transformation
-; W=#Scale#
+W=(#Scale# * 360)
 DynamicVariables=1
 AntiAlias=1
 
