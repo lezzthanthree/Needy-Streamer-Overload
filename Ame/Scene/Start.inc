@@ -3,37 +3,37 @@ Update=-1
 
 [Background]
 Meter=IMAGE
-ImageName=#@#Images\Ame\385
+ImageName=#@#Images\Shared\border\window-ame.png
 AntiAlias=1
 
 [WindowTitles]
 Meter=STRING
 Text="Notice"
 FontFace=DinkieBitmap 7px
-X=34
-Y=14
-FontSize=12
+X=17
+Y=7
+FontSize=6
 FontColor=77,35,207
 
 [Close]
 Meter=IMAGE
-X=(#Width# - 16)
-Y=11
-ImageName=#@#Images\button_close.png
+X=340
+Y=5
+ImageName=#@#Images\Shared\button\button_close.png
 LeftMouseUpAction=[Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
 
 [DarkenBG]
 Meter=SHAPE
-Shape=Rectangle 8,42,385,251 | Extend FillColor | StrokeWidth 0
+Shape=Rectangle 4,20,348,227 | Extend FillColor | StrokeWidth 0
 FillColor=FillColor 0,0,0,255
 
 [WarningExplanation]
 Meter=String
-X=200
-Y=65
-Text=Due to its changing sprite to create an animation, this skin may cause high CPU usage on low-end machines.#CRLF##CRLF#If you are cautious on your CPU Usage, feel free to close the skin at anytime.
+X=180
+Y=35
+Text=Due to its sprite animation, this skin may cause high CPU usage on low-end machines.#CRLF##CRLF#If you are worried about CPU usage, feel free to close the skin at any time.
 clipString = 2
-W=360
+W=340
 StringAlign=Center
 FontFace=PixelMplus10
 FontSize=14
@@ -42,16 +42,16 @@ AntiAlias=0
 
 [ButtonChromeOpera]
 Meter=Image
-ImageName=#@#Images\Ame\button.png
-X=103
-Y=230
+ImageName=#@#Images\Shared\button\button_warning.png
+X=73
+Y=190
 LeftMouseUpAction=[!WriteKeyValue Variables @Include2 Scene\Ame.inc][Play "#@#Audio\execute.wav"][!RefreshApp]
 
 [StartAme]
 Meter=String
-X=202
-Y=239
-Text=Start Ame
+X=100r
+Y=10r
+Text=Start
 clipString = 2
 W=360
 StringAlign=Center
