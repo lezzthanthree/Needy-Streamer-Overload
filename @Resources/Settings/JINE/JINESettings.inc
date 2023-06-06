@@ -1,7 +1,7 @@
 [Variables]
 ; Change this variable to how many seconds the JINE Chat updates.
 SecondsJINE=60
-Scale=2
+Scale=1
 ; Change emojis to what you like
 ; Emojis Available: [love] [ok] [omg] [sorry] [this] [sad] [ded] [idc]
 Emoji1=love
