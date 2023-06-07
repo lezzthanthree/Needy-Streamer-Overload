@@ -7,38 +7,42 @@ SpritePath=#@#\Images\Ame\sprites\stream\[Stream]\[Section]
 
 [Background]
 Meter=IMAGE
-ImageName=#@#Images\Ame\#Width#.png
-AntiAlias=1
+ImageName=#@#Images\Shared\border\window-ame.png
+W=(#Scale# * 358)
+AntiAlias=0
 
 [WindowTitles]
 Meter=STRING
 Text="Stream"
 FontFace=DinkieBitmap 7px
-X=34
-Y=14
-FontSize=12
+X=(#Scale# * 17)
+Y=(#Scale# * 7)
+FontSize=(#Scale# * 6)
 FontColor=77,35,207
 
 [Close]
 Meter=IMAGE
-X=(#Width# - 16)
-Y=11
-ImageName=#@#Images\button_close.png
+X=(#Scale# * 340)
+Y=(#Scale# * 5)
+W=(#Scale# * 10)
+ImageName=#@#Images\Shared\button\button_close.png
 LeftMouseUpAction=[!SetOption ImageNumberCalc Formula 0][!SetOption Ame Path "#@#Images\Ame\sprites\"][!WriteKeyValue Variables @Include2 "Scene\Ame.inc"][Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
 
 [Settings]
 Meter=IMAGE
-X=-24r
-Y=11
-ImageName=#@#Images\Ame\button_gear.png
+X=(#Scale# * -13)r
+Y=(#Scale# * 5)
+W=(#Scale# * 10)
+ImageName=#@#Images\Shared\button\button_gear.png
 LeftMouseUpAction=[!ToggleConfig "Needy Streamer Overload\Ame\Settings" "Settings.ini"]
 DynamicVariables=1
 
 [Activities]
 Meter=IMAGE
-X=-24r
-Y=11
-ImageName=#@#Images\Ame\button_heart.png
+X=(#Scale# * -11)r
+Y=(#Scale# * 5)
+W=(#Scale# * 10)
+ImageName=#@#Images\Shared\button\button_heart.png
 LeftMouseUpAction=[!CommandMeasure EndStream "Execute 1"]
 DynamicVariables=1
 
@@ -47,11 +51,11 @@ DynamicVariables=1
 [BackgroundStream]
 Meter=IMAGE
 MeasureName=MeasureBackground
-X=8
-Y=42
+X=(#Scale# * 4)
+Y=(#Scale# * 20)
+W=(#Scale# * 348)
 DynamicVariables=1
 Path=#@#Images\Ame\bg\
-W=#Width#
 AntiAlias=1
 
 [ScreenSaverRandomizer]
@@ -63,10 +67,10 @@ HighBound=2
 [ScreenSaver]
 Meter=IMAGE
 MeasureName=ScreenSaverRandomizer
-X=8
-Y=42
+X=(#Scale# * 4)
+Y=(#Scale# * 20)
+W=(#Scale# * 348)
 Path=#@#Images\Ame\bg_screensaver\
-W=#Width#
 DynamicVariables=1
 AntiAlias=1
 
@@ -106,10 +110,10 @@ DynamicVariables=1
 Meter=IMAGE
 MeasureName=ImageNumberCalc
 DynamicVariables=1
-X=8
-Y=42
+X=(#Scale# * 4)
+Y=(#Scale# * 20)
+W=(#Scale# * 348)
 Path=#StreamSpritePath#
-W=#Width#
 AntiAlias=1
 
 ; ===== End Stream =====
@@ -117,6 +121,6 @@ AntiAlias=1
 [EndStream]
 Measure=Plugin
 Plugin=ActionTimer
-ActionList1= Change | Wait 2000 | Switch
+ActionList1= Change | Wait 3000 | Switch
 Change=[!SetOption ImageNumberCalc Formula 0][!SetOption KAngel Path "#@#Images\Ame\sprites\stream"][Play "#@#Audio\endHaishin.wav"][!Redraw]
 Switch=[!WriteKeyValue Variables @Include2 "Scene\Ame.inc"][!Refresh]
