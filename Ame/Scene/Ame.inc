@@ -239,13 +239,13 @@ Group=Activity
 Measure=Time
 Format=%H
 
-[CheckTime]
-Measure=Calc
-DynamicVariables=1
-Formula=[CheckHour]
-ifCondition = (CheckTime >= 0) || (CheckTime <= 23)
-ifTrueAction = [!SetOption Stream LeftMouseUpAction """[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!WriteKeyValue Variables @Include2 "Scene\Transition.inc"][!Refresh]"""][!SetOption Stream Greyscale 0][!UpdateMeter Stream][!Redraw]
-ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpAction ""]
+; [CheckTime]
+; Measure=Calc
+; DynamicVariables=1
+; Formula=[CheckHour]
+; ifCondition = (CheckTime >= 18) || (CheckTime <= 6)
+; ifTrueAction = [!SetOption Stream LeftMouseUpAction """[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!WriteKeyValue Variables @Include2 "Scene\Transition.inc"][!Refresh]"""][!SetOption Stream Greyscale 0][!UpdateMeter Stream][!Redraw]
+; ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpAction ""]
 
 [Stream]
 Meter=Image
@@ -258,7 +258,7 @@ Group=Activity
 
 [StreamLabel]
 Meter=STRING
-Text="Stream"
+Text="[Soon]"
 FontFace=DinkieBitmap 7px
 X=33r
 Y=6R
