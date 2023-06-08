@@ -13,4 +13,6 @@ ApiKey=Paste Here!
 
 TimeFormat1224=12
 
+Scale=1
+
 Units=metric
