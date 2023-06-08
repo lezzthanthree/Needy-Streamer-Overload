@@ -3,6 +3,7 @@ StressToggleValue=0
 AffectionToggleValue=0
 DarknessToggleValue=0
 Scale=1
+BorderScale=1
 
 [DisableCPU]
 Measure=Calc
