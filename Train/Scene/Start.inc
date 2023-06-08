@@ -1,5 +1,7 @@
 [Rainmeter]
+OnRefreshAction=[!KeepOnScreen 0][Play "#@#\Audio\Dialog.wav"]
 Update=-1
+
 
 [Variables]
 @Include=#@#\Settings\Train\TrainSettings.inc
