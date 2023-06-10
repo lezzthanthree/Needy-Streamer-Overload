@@ -129,7 +129,7 @@ X=((#RightX#) - (#BorderScale# * 13))
 Y=(#BorderScale# * 5)
 W=(#BorderScale# * 10)
 ImageName=#@#Images\Shared\button\button_close.png
-LeftMouseUpAction=[Play "#@#\Audio\window_close.wav"][!RainmeterDeactivateConfig]
+LeftMouseUpAction=[Play "#@#\Audio\window_close.wav"][!DeactivateConfig]
 
 [Resize]
 Meter=IMAGE

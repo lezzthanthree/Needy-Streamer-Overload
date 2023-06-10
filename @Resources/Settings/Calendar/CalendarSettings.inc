@@ -14,5 +14,8 @@ ApiKey=Paste Here!
 TimeFormat1224=12
 
 Scale=1
+BorderScale=1
 
 Units=metric
+SelectedBorderScaleOption=1
+SelectedScaleOption=1
