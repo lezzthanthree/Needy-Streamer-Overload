@@ -12,30 +12,34 @@ License=Creative Commons Attribution - Non - Commercial - Share Alike 3.0
 
 [Variables]
 Zero=-1
+@Include=#@#\Plugins\BorderHandler.inc
 
-[Background]
-Meter=IMAGE
-ImageName=#@#Images\Shared\border\window-golive.png
-W=(#Scale# * 370)
-AntiAlias=0
+;==================================
+;========= Window Handler =========
+;==================================
 
-[WindowTitles]
-Meter=STRING
-Text="Transform!"
-FontFace=DinkieBitmap 7px
-LeftMouseUpAction=[!SetOption Transformation Path "#@#\Images\Ame\transformation_dark"][!Redraw]
-X=(#Scale# * 17)
-Y=(#Scale# * 7)
-FontSize=(#Scale# * 6)
-FontColor=77,35,207
+; Modify these values to change window dimensions.
+RightX=((#LeftX#) + (#Scale# * 360))
+RightY=((#LeftY#) + (#Scale# * 270))
+WindowName="Transform!"
+
+RightAlign=(#RightX# - #LeftX#)
+CenterAlign=((#RightX# - #LeftX#) / 2)
+BottomAlign=(#RightY# - #LeftY#)
+MiddleAlign=((#RightY# - #LeftY#) / 2)
+
+
+;==================================
+;========= Frame  Buttons =========
+;==================================
 
 [Close]
 Meter=IMAGE
-X=(#Scale# * 360)
-Y=(#Scale# * 5)
-W=(#Scale# * 10)
-ImageName=#@#Images\Shared\border\button_close.png
-LeftMouseUpAction=[!SetOption ImageNumberCalc Formula 0][!SetOption Ame Path "#@#Images\Ame\sprites\"][!WriteKeyValue Variables @Include2 "Scene\Ame.inc"][Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
+X=((#RightX#) - (#BorderScale# * 13))
+Y=(#BorderScale# * 5)
+W=(#BorderScale# * 10)
+ImageName=#@#Images\Shared\button\button_close.png
+LeftMouseUpAction=[!CommandMeasure ActionTimer "Stop 1"][Play "#@#\Audio\open.wav"][!WriteKeyValue Variables @Include2 "Scene\Stream.inc"][!Refresh]
 
 ; ===== Transition Animation =====
 
@@ -47,13 +51,14 @@ DynamicVariables = 1
 [Transformation]
 Meter=Image
 MeasureName=ImageNumberCalc
-X=(#Scale# * 4)
-Y=(#Scale# * 20)
+X=0
+Y=0
 LeftMouseUpAction=[!CommandMeasure ActionTimer "Stop 1"][Play "#@#\Audio\open.wav"][!WriteKeyValue Variables @Include2 "Scene\Stream.inc"][!Refresh]
 Path=#@#\Images\Ame\transformation
 W=(#Scale# * 360)
 DynamicVariables=1
 AntiAlias=1
+Container=MeterContainer
 
 [Animation]
 Measure=Plugin

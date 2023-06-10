@@ -4,6 +4,8 @@ AffectionToggleValue=0
 DarknessToggleValue=0
 Scale=1
 BorderScale=1
+SelectedBorderScaleOption=1
+SelectedScaleOption=1
 
 [DisableCPU]
 Measure=Calc

@@ -14,8 +14,6 @@ TrainPath=#@#Images\Train\Train\[MeasureTimeOfDay]\
 @Include=#@#\Settings\Train\TrainSettings.inc
 @Include2=#@#\Plugins\BorderHandler.inc
 
-; ===================
-
 ;==================================
 ;========= Window Handler =========
 ;==================================

@@ -13,40 +13,56 @@ SpritePath=#@#\Images\Ame\sprites\[Stress]\[Affection]\[Darkness]\[Variation]
 ; Change Ame's Sprite to playing/watching when a program has detected.
 @Include=#@#\Settings\Ame\Programs.inc
 @Include2=#@#\Settings\Ame\Task Manager.inc
-ActivityWindowOffset=40
+@Include3=#@#\Plugins\BorderHandler.inc
+ActivityXOffset=(#Scale# * 40)
+ActivityYOffset=(#Scale# * 40)
+ActivityLeftX=(#LeftX# + #ActivityXOffset#)
+ActivityLeftY=(#LeftY# + #ActivityYOffset#)
+ActivityRightX=((#LeftX#) + (#Scale# * 244))
+ActivityRightY=((#LeftY#) + (#Scale# * 115))
+;==================================
+;========= Window Handler =========
+;==================================
 
-; ===== Window =====
+; Modify these values to change window dimensions.
+; NOTE: This version supports custom dimensions! Experiment!
+RightX=((#LeftX#) + (#Scale# * 348))
+RightY=((#LeftY#) + (#Scale# * 227))
+WindowName="Webcam"
 
-[Background]
-Meter=IMAGE
-ImageName=#@#Images\Shared\border\window-ame.png
-W=(#Scale# * 358)
-AntiAlias=0
+RightAlign=(#RightX# - #LeftX#)
+CenterAlign=((#RightX# - #LeftX#) / 2)
+BottomAlign=(#RightY# - #LeftY#)
+MiddleAlign=((#RightY# - #LeftY#) / 2)
 
-[WindowTitles]
-Meter=STRING
-Text="Webcam"
-FontFace=DinkieBitmap 7px
-X=(#Scale# * 17)
-Y=(#Scale# * 7)
-FontSize=(#Scale# * 6)
-FontColor=77,35,207
-AntiAlias=0
+
+;==================================
+;========= Frame  Buttons =========
+;==================================
 
 [Close]
 Meter=IMAGE
-X=(#Scale# * 340)
-Y=(#Scale# * 5)
-W=(#Scale# * 10)
+X=((#RightX#) - (#BorderScale# * 13))
+Y=(#BorderScale# * 5)
+W=(#BorderScale# * 10)
 ImageName=#@#Images\Shared\button\button_close.png
-LeftMouseUpAction=[!SetOption ImageNumberCalc Formula 0][!SetOption Ame Path "#@#Images\Ame\sprites\stream"][Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
+LeftMouseUpAction=[!SetOption ImageNumberCalc Formula 0][!SetOption Ame Path "#@#Images\Ame\sprites\stream"][Play "#@#Audio\endHaishin.wav"][!Redraw][!DeactivateConfig]
 AntiAlias=0
+
+[Resize]
+Meter=IMAGE
+X=(#BorderScale# * -13)r
+Y=r
+W=(#BorderScale# * 10)
+ImageName=#@#Images\Shared\button\button_size.png
+LeftMouseUpAction=[!ToggleConfig "Needy Streamer Overload\Ame\Settings" "Scaling.ini"]
+DynamicVariables=1
 
 [Settings]
 Meter=IMAGE
-X=(#Scale# * -13)r
-Y=(#Scale# * 5)
-W=(#Scale# * 10)
+X=(#BorderScale# * -11)r
+Y=r
+W=(#BorderScale# * 10)
 ImageName=#@#Images\Shared\button\button_gear.png
 LeftMouseUpAction=[!ToggleConfig "Needy Streamer Overload\Ame\Settings" "Settings.ini"]
 DynamicVariables=1
@@ -54,11 +70,11 @@ AntiAlias=0
 
 [Activities]
 Meter=IMAGE
-X=(#Scale# * -11)r
-Y=(#Scale# * 5)
-W=(#Scale# * 10)
+X=(#BorderScale# * -11)r
+Y=r
+W=(#BorderScale# * 10)
 ImageName=#@#Images\Shared\button\button_heart.png
-LeftMouseUpAction=[!ShowMeterGroup Activity][Play "#@#\Audio\open.wav"][!Redraw]
+LeftMouseUpAction=[!ShowMeterGroup Activity][!HideMeter HeadpatHitbox][Play "#@#\Audio\open.wav"][!Redraw]
 DynamicVariables=1
 AntiAlias=0
 
@@ -67,12 +83,13 @@ AntiAlias=0
 [BackgroundStream]
 Meter=IMAGE
 MeasureName=MeasureBackground
-X=(#Scale# * 4)
-Y=(#Scale# * 20)
+X=0
+Y=0
 DynamicVariables=1
 Path=#@#Images\Ame\bg\
 W=(#Scale# * 348)
 AntiAlias=0
+Container=MeterContainer
 
 [ScreenSaverRandomizer]
 Measure=Calc
@@ -83,12 +100,13 @@ HighBound=2
 [ScreenSaver]
 Meter=IMAGE
 MeasureName=ScreenSaverRandomizer
-X=(#Scale# * 4)
-Y=(#Scale# * 20)
+X=0
+Y=0
 Path=#@#Images\Ame\bg_screensaver\
 W=(#Scale# * 348)
 DynamicVariables=1
 AntiAlias=0
+Container=MeterContainer
 
 ; ===== Ame Animation ===== 
 
@@ -116,11 +134,12 @@ DynamicVariables=1
 Meter=IMAGE
 MeasureName=ImageNumberCalc
 DynamicVariables=1
-X=(#Scale# * 4)
-Y=(#Scale# * 20)
+X=0
+Y=0
 Path=#SpritePath#
 W=(#Scale# * 348)
 AntiAlias=0
+Container=MeterContainer
 
 ; ===== Headpat ===== 
 
@@ -162,23 +181,102 @@ IfEqualAction = [Play "#@#\Audio\nadenade_2.wav"][!SetOption HeadpatStatus Formu
 
 ; ===== Activity ===== 
 
-[ActivityWindow]
+
+
+[ActivityFrameTopLeft]
 Meter=IMAGE
-ImageName=#@#Images\Ame\menu\window.png
-X=#ActivityWindowOffset#
-Y=#ActivityWindowOffset#
-W=(#Scale# * 254)
+ImageName=#@#Images\Shared\border\windowtopleft.png
+X=#ActivityXOffset#
+Y=#ActivityYOffset#
+W=(#BorderScale# * 20)
 AntiAlias=0
 Hidden=1
 Group=Activity
+[ActivityFrameTop]
+Meter=IMAGE
+ImageName=#@#Images\Shared\border\windowtop.png
+X=((#ActivityLeftX#) + (#BorderScale# * 16))
+Y=#ActivityYOffset#
+W=((#ActivityRightX#) - (#LeftX#) - (#BorderScale# * 30))
+H=(#BorderScale# * 20)
+AntiAlias=0
+Hidden=1
+Group=Activity
+[ActivityFrameTopRight]
+Meter=IMAGE
+ImageName=#@#Images\Shared\border\windowtopright.png
+X=((#ActivityRightX#) - (#BorderScale# * 14) + #ActivityXOffset#)
+Y=#ActivityYOffset#
+W=(#BorderScale# * 20)
+AntiAlias=0
+Hidden=1
+Group=Activity
+[ActivityFrameLeft]
+Meter=IMAGE
+ImageName=#@#Images\Shared\border\windowleft.png
+X=#ActivityXOffset#
+Y=(#ActivityLeftY#)
+W=(#BorderScale# * 4)
+H=((#ActivityRightY#) - (#LeftY#))
+AntiAlias=0
+Hidden=1
+Group=Activity
+[ActivityFrameRight]
+Meter=IMAGE
+ImageName=#@#Images\Shared\border\windowright.png
+X=(#ActivityRightX# + #ActivityXOffset#)
+Y=(#ActivityLeftY#)
+W=(#BorderScale# * 6)
+H=((#ActivityRightY#) - (#LeftY#))
+AntiAlias=0
+Hidden=1
+Group=Activity
+[ActivityFrameBottomLeft]
+Meter=IMAGE
+ImageName=#@#Images\Shared\border\windowbottomleft.png
+X=#ActivityXOffset#
+Y=(#ActivityRightY# + #ActivityYOffset#)
+W=(#BorderScale# * 36)
+H=(#BorderScale# * 11)
+AntiAlias=0
+Hidden=1
+Group=Activity
+[ActivityFrameBottom]
+Meter=IMAGE
+ImageName=#@#Images\Shared\border\windowbottom.png
+X=((#BorderScale# * 36) + #ActivityXOffset#)
+Y=(#ActivityRightY# + #ActivityYOffset#)
+W=((#ActivityRightX#) - (#BorderScale# * 36))
+H=(#BorderScale# * 11)
+AntiAlias=0
+Hidden=1
+Group=Activity
+[ActivityFrameBottomRight]
+Meter=IMAGE
+ImageName=#@#Images\Shared\border\windowbottomright.png
+X=(#ActivityRightX# + #ActivityXOffset#)
+Y=(#ActivityRightY# + #ActivityYOffset#)
+W=(#BorderScale# * 6)
+H=(#BorderScale# * 11)
+AntiAlias=0
+Hidden=1
+Group=Activity
+
+[ActivityContainer]
+Meter=Image
+SolidColor=255,255,255
+X=(#LeftX# + #ActivityXOffset#)
+Y=(#LeftY# + #ActivityYOffset#)
+W=(#Scale# * 244)
+H=(#Scale# * 115)
 
 [ActivityWindowTitle]
 Meter=STRING
 Text="Activities"
 FontFace=DinkieBitmap 7px
-X=((17 * #Scale#) + #ActivityWindowOffset#)
-Y=((7 * #Scale#) + #ActivityWindowOffset#)
-FontSize=(6 * #Scale#)
+X=((17 * #BorderScale#) + #ActivityXOffset#)
+Y=((7 * #BorderScale#) + #ActivityYOffset#)
+FontSize=(6 * #BorderScale#)
 FontColor=77,35,207
 Hidden=1
 Group=Activity
@@ -186,37 +284,67 @@ AntiAlias=0
 
 [ActivityClose]
 Meter=IMAGE
-X=((236 * #Scale#) + #ActivityWindowOffset#)
-Y=((5 * #Scale#) + #ActivityWindowOffset#)
-W=(#Scale# * 10)
+X=(((#ActivityRightX#) - (#BorderScale# * 13)) + #ActivityXOffset#)
+Y=((5 * #BorderScale#) + #ActivityYOffset#)
+W=(#BorderScale# * 10)
 ImageName=#@#Images\Shared\button\button_close.png
-LeftMouseUpAction=[!HideMeterGroup Activity][Play "#@#\Audio\close.wav"][!ShowMeter Activities][!Redraw]
+LeftMouseUpAction=[!HideMeterGroup Activity][Play "#@#\Audio\close.wav"][!ShowMeter HeadpatHitbox][!Redraw]
 Hidden=1
 Group=Activity
 AntiAlias=0
+
+[ActivityBackground]
+Meter=Shape
+Shape=Rectangle 0,0,(#Scale# * 244),(#Scale# * 115) | Fill Color 252,241,255 | StrokeWidth 0
+Hidden=1
+Group=Activity
+AntiAlias=0
+Container=ActivityContainer
+
+[LineRule]
+Meter=SHAPE
+Shape=Rectangle (53 * #Scale#),(35 * #Scale#),(#Scale# * 180),(#Scale# * 1) | Extend FillColor | StrokeWidth 0
+FillColor=FillColor 222,223,220,255
+Hidden=1
+Group=Activity
+AntiAlias=0
+Container=ActivityContainer
+
+[ActivityIcon]
+Meter=Image
+ImageName=#@#Images\Ame\menu\activityicon.png
+X=(6 * #Scale#)
+Y=(6 * #Scale#)
+W=(#Scale# * 48)
+Hidden=1
+Group=Activity
+AntiAlias=0
+Container=ActivityContainer
 
 [ActivitiesText]
 Meter=STRING
 Text="Activities"
 FontFace=Zpix
 FontColor=77,35,207
-X=((65 * #Scale#) + #ActivityWindowOffset#)
-Y=((41 * #Scale#) + #ActivityWindowOffset#)
+X=(61 * #Scale#)
+Y=(21 * #Scale#)
 FontSize=(#Scale# * 9)
 Hidden=1
 Group=Activity
 AntiAlias=0
+Container=ActivityContainer
 
 [Game]
 Meter=Image
 ImageName=#@#Images\Ame\menu\game.png
-X=((62 * #Scale#) + #ActivityWindowOffset#)
-Y=((65 * #Scale#) + #ActivityWindowOffset#)
+X=(58 * #Scale#)
+Y=(45 * #Scale#)
 W=(#Scale# * 32)
 Hidden=1
-LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter Activities][!HideMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\-1\[*Affection*]\[*Darkness*]\0"][!Redraw]
+LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter HeadpatHitbox][!HideMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\-1\[*Affection*]\[*Darkness*]\0"][!Redraw]
 Group=Activity
 AntiAlias=0
+Container=ActivityContainer
 
 [GameLabel]
 Meter=STRING
@@ -230,17 +358,19 @@ StringAlign = Center
 Hidden=1
 Group=Activity
 AntiAlias=0
+Container=ActivityContainer
 
 [Movie]
 Meter=Image
 ImageName=#@#Images\Ame\menu\movie.png
-X=((110 * #Scale#) + #ActivityWindowOffset#)
-Y=((65 * #Scale#) + #ActivityWindowOffset#)
+X=(106 * #Scale#)
+Y=(45 * #Scale#)
 W=(#Scale# * 32)
 Hidden=1
-LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter Activities][!HideMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\-1\[*Affection*]\[*Darkness*]\1"][!Redraw]
+LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter HeadpatHitbox][!HideMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\-1\[*Affection*]\[*Darkness*]\1"][!Redraw]
 Group=Activity
 AntiAlias=0
+Container=ActivityContainer
 
 [MovieLabel]
 Meter=STRING
@@ -254,6 +384,7 @@ StringAlign = Center
 Hidden=1
 Group=Activity
 AntiAlias=0
+Container=ActivityContainer
 
 [CheckHour]
 Measure=Time
@@ -270,13 +401,14 @@ ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpActio
 [Stream]
 Meter=Image
 ImageName=#@#Images\Ame\menu\youtube.png
-X=((157 * #Scale#) + #ActivityWindowOffset#)
-Y=((65 * #Scale#) + #ActivityWindowOffset#)
+X=(153 * #Scale#)
+Y=(45 * #Scale#)
 W=(#Scale# * 32)
 Greyscale=1
 Hidden=1
 Group=Activity
 AntiAlias=0
+Container=ActivityContainer
 
 [StreamLabel]
 Meter=STRING
@@ -290,17 +422,19 @@ StringAlign = Center
 Hidden=1
 Group=Activity
 AntiAlias=0
+Container=ActivityContainer
 
 [Idle]
 Meter=Image
 ImageName=#@#Images\Ame\menu\ame.png
-X=((205 * #Scale#) + #ActivityWindowOffset#)
-Y=((65 * #Scale#) + #ActivityWindowOffset#)
+X=(201 * #Scale#)
+Y=(45 * #Scale#)
 W=(#Scale# * 32)
 Hidden=1
-LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter Activities][!ShowMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\[*Stress*]\[*Affection*]\[*Darkness*]\[*Variation*]"][!Redraw]
+LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!ShowMeter HeadpatHitbox][!SetVariable SpritePath "#@#Images\Ame\sprites\[*Stress*]\[*Affection*]\[*Darkness*]\[*Variation*]"][!Redraw]
 Group=Activity
 AntiAlias=0
+Container=ActivityContainer
 
 [IdleLabel]
 Meter=STRING
@@ -314,3 +448,4 @@ StringAlign = Center
 Hidden=1
 Group=Activity
 AntiAlias=0
+Container=ActivityContainer
