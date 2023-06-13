@@ -1,5 +1,9 @@
 [Variables]
 @Include=Players\Normal.inc
+Scale=2
+BorderScale=2
+SelectedScaleOption=3
+SelectedBorderScaleOption=3
 
 [MeasureParent]
 Measure=Plugin
@@ -17,4 +21,4 @@ Plugin=WebNowPlaying
 Measure=Calc
 Formula=0
 ifEqualValue = 0
-ifEqualAction = [!SetOption MeterTitle Text "Click the gear icon and select a player!"]
+ifEqualAction = [!SetOption MeterTitle Text "Click the gear icon! ^"]
