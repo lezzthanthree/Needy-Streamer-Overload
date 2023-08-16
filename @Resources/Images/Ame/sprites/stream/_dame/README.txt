@@ -1,0 +1,3 @@
+These streams were not included because some of it may have dark themes that may be sensitive to other people, some may do not fit on the "regular" stream loop for KAngel, or some may be repetitive to other streams included.
+
+If you wish to add them back to the list of streams, don't forget to change the NumberOfStreams Variable inside the Stream.inc file and rename the newly added stream into an integer.
