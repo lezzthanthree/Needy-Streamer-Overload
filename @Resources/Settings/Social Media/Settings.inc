@@ -1,6 +1,6 @@
 [Variables]
 SavedImage=0
-NumberOfImages=89
+NumberOfImages=110
 @Include=TweetOptions\Hover.inc
 @Include2=Slideshow\Enabled.inc
 @Include3=Window\WindowMatch.inc
