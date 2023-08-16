@@ -1,7 +1,20 @@
+[Rainmeter]
+; Smaller Number, Faster Animation, CPU Usage increase.
+; 1000 = saves CPU Usage, slowest animation [1FPS]
+; 500 = saves CPU Usage, slow animation [2FPS]
+; 250 = moderate CPU Usage, smooth animation [Default] [4FPS]
+; 200 = high CPU Usage, smooth animation. [5FPS]
+Update=250 
+OnRefreshAction=[!CommandMeasure "Script" "NewStream()"][!CommandMeasure Animation "Execute 1"]
+
 [Variables]
 @Include="#@#\Settings\Ame\Task Manager - Stream.inc"
 
-SpritePath=#@#\Images\Ame\sprites\stream\[Stream]\[Section]
+SpritePath=#@#Images\Ame\sprites\stream\[Stream]\[Section]
+
+Frame = -1
+
+NumberOfStreams = 58 ; ZERO-BASED INDEXING.
 
 ; ===== Window =====
 
@@ -74,33 +87,44 @@ AntiAlias=1
 
 [ImageNumberCalc]
 Measure=Calc
-Formula=
+Formula=(#Frame# + 1)
 DynamicVariables=1
 AntiAlias=0
 
-[StreamRandomizer]
+[Stream]
 Measure=Calc
 Formula=Random
 LowBound=0
-HighBound=1
-UpdateRandom=1
-UpdateDivider=#VarRand#
+HighBound=#NumberOfStreams#
 DynamicVariables=1
-
-[Stream]
-Measure=Calc
-Formula=[StreamRandomizer]
-DynamicVariables=1
+UpdateDivider=-1
 
 [NumberOfSections]
-Measure=Calc
-Formula=1
+Measure=Plugin
+Plugin=FolderInfo
+Folder=#@#\Images\Ame\sprites\stream\[Stream]\
+InfoType=FolderCount
 DynamicVariables=1
 
 [Section]
 Measure=Calc
-Formula=##
+Formula=0
 DynamicVariables=1
+ifConditionMode=1
+ifCondition=Section >= NumberOfSections
+ifTrueAction=[!UpdateMeasure Stream][!SetOption Section Formula 0][!Redraw][!CommandMeasure Animation "Execute 1"]
+ifFalseAction=[!CommandMeasure Animation "Execute 1"]
+
+[NumberOfFrames]
+Measure=Plugin
+Plugin=FolderInfo
+Folder=#SpritePath#
+InfoType=FileCount
+DynamicVariables=1
+
+[NumberOfFramesZero]
+Measure=Calc
+Formula=NumberOfFrames-1
 
 [KAngel]
 Meter=IMAGE
@@ -108,9 +132,17 @@ MeasureName=ImageNumberCalc
 DynamicVariables=1
 X=8
 Y=42
-Path=#StreamSpritePath#
+Path=#SpritePath#
 W=#Width#
 AntiAlias=1
+
+[Animation]
+Measure=Plugin
+Plugin=ActionTimer
+ActionList1=Wait 250 | Repeat Animate, 250, [NumberOfFramesZero] | Wait 7000 | NextSection
+Animate=[!SetVariable Frame "[ImageNumberCalc]"][!UpdateMeasure ImageNumberCalc][!Redraw]
+NextSection=[!SetVariable Frame -1][!SetOption Section Formula [Section]+1][!UpdateMeasure Section][!UpdateMeasure ImageNumberCalc][!Redraw]
+DynamicVariables=1
 
 ; ===== End Stream =====
 

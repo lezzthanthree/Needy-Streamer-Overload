@@ -21,7 +21,12 @@ Group=Debug
 Meter=String
 MeasureName=MeasureBackground
 MeasureName2=ScreenHours
-
+MeasureName3=ScreenSaverRandomizer
+MeasureName4=Stream
+MeasureName5=NumberOfSections
+MeasureName6=Section
+MeasureName7=NumberOfFramesZero
+MeasureName8=ImageNumberCalc
 FontFace=zpix
 FontSize=8
 FontColor=77,33,203
@@ -29,7 +34,7 @@ AntiAlias=1
 X=480
 Y=37
 StringAlign=Left
-Text="Background: %1 #CRLF#Hours: %2"
+Text="Background: %1 #CRLF#Hours: %2 #CRLF#ScreenSaver: %3 #CRLF#Stream: %4 #CRLF#NumOfSections: %5 #CRLF#Section: %6 #CRLF#NumOfFrames: %7 #CRLF#Frame: %8"
 ToolTipText=#SpritePath#
 clipString = 1
 Group=Debug
@@ -49,56 +54,19 @@ OnUpdateAction=[!SetVariable Zero2 "[VariationChangeClock]"]
 DynamicVariables=1
 Group=Debug
 
-[Clock]
-Measure = Calc
-Formula = Counter % 1
-ifCondition = Stress > 1
-ifTrueAction = [!SetOption Stress Formula -1]
-ifCondition2 = (Affection > 2) && (Stress = 0)
-ifTrueAction2 = [!SetOption Affection Formula 0]
-ifCondition3 = (Affection > 2) && (Stress = 1)
-ifTrueAction3 = [!SetOption Affection Formula -1][!SetOption Darkness Formula -1]
-ifCondition4 = Darkness > 2 && (Stress = 0)
-ifTrueAction4 = [!SetOption Darkness Formula 0]
-ifCondition5 = Darkness > 2 && (Stress = 1)
-ifTrueAction5 = [!SetOption Affection Formula -1][!SetOption Darkness Formula -1]
-ifCondition6 = ScreenHours > 1200
-ifTrueAction6 = [!SetOption ScreenHours Formula 0]
-ifCondition7 = (Variation > 1) && (Stress <> -1)
-ifTrueAction7 = [!SetOption Variation Formula 0]
-ifCondition8 = (Variation > 1) && (Stress = -1)
-ifTrueAction8 = [!SetOption Variation Formula 0]
-ifCondition9 = ScreenSaverRandomizer > 2
-ifTrueAction9 = [!SetOption ScreenSaverRandomizer Formula 0]
-DynamicVariables=1
-Group=Debug
-
-[StressIncrease]
-Meter=Image
-ImageName=#@#Images\Task Manager\icon_status_stress.png
-LeftMouseDownAction=[!SetOption Stress Formula [Stress]+1][!DisableMeasure MeasureCPU]
-X=420
-Y=42
-ToolTipText=Increase Stress
-Group=Debug
-
-[AffectionIncrease]
-Meter=Image
-ImageName=#@#Images\Task Manager\icon_status_love.png
-LeftMouseDownAction=[!SetOption Affection Formula [Affection]+1][!DisableMeasure MeasureMemoryPercentage]
-X=420
-Y=102
-ToolTipText=Increase Affection
-Group=Debug
-
-[DarknessIncrease]
-Meter=Image
-ImageName=#@#Images\Task Manager\icon_status_yami.png
-LeftMouseDownAction=[!SetOption Darkness Formula [Darkness]+1][!DisableMeasure MeasureDiskPercentage]
-X=420
-Y=162
-ToolTipText=Increase Darkness
-Group=Debug
+; [Clock]
+; Measure = Calc
+; Formula = Counter % 1
+; ifCondition = ScreenHours > 1200
+; ifTrueAction = [!SetOption ScreenHours Formula 0]
+; ifCondition2 = (Variation > 1) && (Stress <> -1)
+; ifTrueAction2 = [!SetOption Variation Formula 0]
+; ifCondition3 = (Variation > 1) && (Stress = -1)
+; ifTrueAction3 = [!SetOption Variation Formula 0]
+; ifCondition4 = ScreenSaverRandomizer > 2
+; ifTrueAction4 = [!SetOption ScreenSaverRandomizer Formula 0]
+; DynamicVariables=1
+; Group=Debug
 
 [HourIncrease]
 Meter=Image
@@ -112,7 +80,7 @@ Group=Debug
 [OpenSprite]
 Meter=Image
 ImageName=#@#Images\Desktop Icons\Icons\icon_picture.png
-LeftMouseDownAction=["#StreamSpritePath#"]
+LeftMouseDownAction=["#SpritePath#"]
 X=480
 Y=210
 Group=Debug
@@ -122,20 +90,12 @@ DynamicVariables=1
 [VariationChange]
 Meter=Image
 ImageName=#@#Images\Media Player\Next.png
-LeftMouseDownAction=[!DisableMeasure VariationRandomizer][!DisableMeasure VariationChangeClock][!SetOption Variation Formula [Variation]+1]
+LeftMouseDownAction=[!CommandMeasure Animation "Stop 1"][!UpdateMeasure Stream][!SetOption Section Formula 0][!SetVariable Frame -1][!Redraw][!CommandMeasure Animation "Execute 1"]
 X=430
 Y=282
 ToolTipText=Change the Variation of the Sprite.
 Group=Debug
 
-[HeadpatHitboxShow]
-Meter=Image
-ImageName=#@#Images\Desktop Icons\Icons\hearts.png
-LeftMouseDownAction=[!SetOption HeadpatHitbox FillColor "FillColor 0,0,0,100"]
-X=530
-Y=210
-ToolTipText=Show the Headpat Hitbox
-Group=Debug
 
 [Edit]
 Meter=Image
