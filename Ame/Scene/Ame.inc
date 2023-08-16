@@ -4,7 +4,7 @@
 ; 500 = saves CPU Usage, slow animation [2FPS]
 ; 250 = moderate CPU Usage, smooth animation [Default] [4FPS]
 ; 200 = high CPU Usage, smooth animation. [5FPS]
-Update=250 
+Update=250
 
 [Variables]
 SpritePath=#@#\Images\Ame\sprites\[Stress]\[Affection]\[Darkness]\[Variation]
@@ -239,13 +239,14 @@ Group=Activity
 Measure=Time
 Format=%H
 
-; [CheckTime]
-; Measure=Calc
-; DynamicVariables=1
-; Formula=[CheckHour]
-; ifCondition = (CheckTime >= 18) || (CheckTime <= 6)
-; ifTrueAction = [!SetOption Stream LeftMouseUpAction """[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!WriteKeyValue Variables @Include2 "Scene\Transition.inc"][!Refresh]"""][!SetOption Stream Greyscale 0][!UpdateMeter Stream][!Redraw]
-; ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpAction ""]
+[CheckTime]
+Measure=Calc
+DynamicVariables=1
+Formula=[CheckHour]
+ifCondition = (CheckTime > 18) || (CheckTime < 6)
+; ifCondition = (CheckTime >= 0) || (CheckTime <= 24)
+ifTrueAction = [!SetOption Stream LeftMouseUpAction """[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!WriteKeyValue Variables @Include2 "Scene\Transition.inc"][!Refresh]"""][!SetOption Stream Greyscale 0][!UpdateMeter Stream][!Redraw]
+ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpAction ""]
 
 [Stream]
 Meter=Image
@@ -258,7 +259,7 @@ Group=Activity
 
 [StreamLabel]
 Meter=STRING
-Text="[Soon]"
+Text="Stream"
 FontFace=DinkieBitmap 7px
 X=33r
 Y=6R
