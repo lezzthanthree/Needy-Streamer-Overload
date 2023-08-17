@@ -12,6 +12,8 @@ Rainmeter Skins inspired by the visual novel, [NEEDY STREAMER OVERLOAD](https://
     - [Weather Installation](#weather-installation)
 - [Desktop Icons](#desktop-icons)
 - [Quick Notes](#quick-notes)
+- [Sidebars](#sidebars)
+- [Medications](#medications)
 - [Trash Bin](#trash-bin)
 
 # Rainmeter Installation
@@ -36,6 +38,11 @@ She will change depending on your computer's performance. She'll be stressed out
 
 ![Ame](Preview/Showcase/Ame%20Preview.png)
 
+Ame can also stream during the night as KAngel! As P-Chan, you can select Stream on the Activities window!
+
+![KAngel](Preview/Showcase/KAngel%20Preview.gif)
+
+
 - Background also changes when reaching a number of Screen Time hours.
 - You can do activities with her like playing a game or watching a movie!
 - Stats are also customizable on Settings.
@@ -43,7 +50,9 @@ She will change depending on your computer's performance. She'll be stressed out
 ## JINE
 JINE is a messaging app from the game. Ame will send you random messages, so please respond her with stickers!
 
-![JINE](Preview/Showcase/JINE%20Preview.gif)
+Thanks to @Boinciel for redesigning the JINE Skin!
+
+![JINE](Preview/Showcase/JINE%20Preview.png)
 
 - You can add and customize the messages inside the [`script`](JINE/scripts/) folder.
 - Skin only shows four stickers, but can be customized what emojis to show on Settings.
@@ -58,8 +67,11 @@ Pictures from KAngel and Ame from the game, now on your desktop!
 - You can add your own tweets inside the [`script`](Social%20Media/scripts/) folder and pictures inside the [@Resources](@Resources/Images/Social%20Media/Tweets/) folder.
 - You can also change the size of the window on Settings.
 
+#### Image Sources
+- [🎀超絶最かわ🎀てんしちゃん](https://twitter.com/x_angelkawaii_x) and [にゃるら](https://twitter.com/nyalra) from Twitter.
+
 ## Media Player
-Media Player shows what you are listening. Redesigned by YumeMiya#4040!
+Media Player shows what you are listening. Redesigned by @YumeMiya!
 
 ![Media Player](Preview/Showcase/Media%20Player%20Preview.gif)
 
@@ -97,7 +109,7 @@ Weather Information must be added by the user. Follow the [Weather Installation]
 --->
 
 ## Desktop Icons
-A recreation of the desktop icons from the game. Pixel Icons! Now, you won't get bored with these.
+A recreation of the desktop icons from the game. Pixel Icons!
 
 ![Desktop Icon](Preview/Showcase/Desktop%20Icons%20Preview.png)
 
@@ -111,6 +123,18 @@ Want something to be reminded of?
 
 - This skin contains four variants!
 - You can also change the title according to your likeness.
+
+## Sidebars
+Sidebars from the game to make your desktop look more aesthetic. Also updates in real time!
+
+![Sidebars](Preview/Showcase/Sidebars%20Preview.gif)
+
+## Medications
+Just a fidget skin for now.
+
+It's time to take your meds, Ame.
+
+![Medications](Preview/Showcase/Medications%20Preview.png)
 
 ## Trash Bin
 Trash Bin is just the Recycling Bin that looks like a Magic Paper.
@@ -128,7 +152,6 @@ It may look cute, but the skin still contains dialogues that depicts self-harm, 
 - Frostworth#0529 from the NSO [Discord Server](https://discord.com/invite/JNGgNCX6Ue) for the JINE chats!
 - u/spuddddddddddddddddd for their [Ame Sprite Table](https://redd.it/urvi1x).
 - [Persona 5 Calendar Rainmeter Skin](https://github.com/Mive82/Persona-5-Calendar) for the OpenWeatherMap API Code.
-- YumeMiya#4040 for redesigning the Media Player and creating icons on certain skins!
 ---
 
 [<img src="Preview/Watermark/sp.png" alt="smilie pop" width="150"/>](https://www.youtube.com/c/SmiliePop)[<img src="Preview/Watermark/lezzthanthree.png" alt="lezzthanthree" width="150"/>](https://reddit.com/user/lezzthanthree)
