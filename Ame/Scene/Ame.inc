@@ -14,6 +14,7 @@ SpritePath=#@#\Images\Ame\sprites\[Stress]\[Affection]\[Darkness]\[Variation]
 @Include2=#@#\Settings\Ame\Task Manager.inc
 
 ActivityWindowOffset=40
+StreamDayWindowOffset=80
 
 ; ===== Window =====
 
@@ -178,7 +179,7 @@ Meter=IMAGE
 X=(472 + #ActivityWindowOffset#)
 Y=(11 + #ActivityWindowOffset#)
 ImageName=#@#Images\button_close.png
-LeftMouseUpAction=[!HideMeterGroup Activity][Play "#@#\Audio\close.wav"][!ShowMeter Activities][!Redraw]
+LeftMouseUpAction=[!HideMeterGroup Activity][!HideMeterGroup StreamDay][Play "#@#\Audio\close.wav"][!Redraw]
 Hidden=1
 Group=Activity
 
@@ -246,7 +247,7 @@ Formula=[CheckHour]
 ifCondition = (CheckTime > 18) || (CheckTime < 6)
 ; ifCondition = (CheckTime >= 0) || (CheckTime <= 24)
 ifTrueAction = [!SetOption Stream LeftMouseUpAction """[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!WriteKeyValue Variables @Include2 "Scene\Transition.inc"][!Refresh]"""][!SetOption Stream Greyscale 0][!UpdateMeter Stream][!Redraw]
-ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpAction ""]
+ifFalseAction=[!SetOption Stream Greyscale 1][!SetOption Stream LeftMouseUpAction """[Play "#@#\Audio\open.wav"][!ShowMeterGroup StreamDay][!Redraw]"""]
 
 [Stream]
 Meter=Image
@@ -289,3 +290,91 @@ FontColor=77,35,207
 StringAlign = Center
 Hidden=1
 Group=Activity
+
+; =========
+
+[StreamDayWindow]
+Meter=IMAGE
+ImageName=#@#Images\Ame\menu\window_streamday.png
+X=#StreamDayWindowOffset#
+Y=#StreamDayWindowOffset#
+AntiAlias=1
+Hidden=1
+Group=StreamDay
+
+[StreamDayWindowTitle]
+Meter=STRING
+Text="Stream"
+FontFace=DinkieBitmap 7px
+X=(34 + #StreamDayWindowOffset#)
+Y=(14 + #StreamDayWindowOffset#)
+FontSize=12
+FontColor=77,35,207
+Hidden=1
+Group=StreamDay
+
+[StreamDayClose]
+Meter=IMAGE
+X=(472 + #StreamDayWindowOffset#)
+Y=(11 + #StreamDayWindowOffset#)
+ImageName=#@#Images\button_close.png
+LeftMouseUpAction=[!HideMeterGroup StreamDay][Play "#@#\Audio\close.wav"][!ShowMeter Activities][!Redraw]
+Hidden=1
+Group=StreamDay
+
+[StreamDayMessage]
+Meter=String
+X=(250 + #StreamDayWindowOffset#)
+Y=(100 + #StreamDayWindowOffset#)
+Text="Stream during daytime?"
+clipString = 2
+W=365
+StringAlign=Center
+FontFace=PixelMplus10
+FontSize=15
+FontColor=77,35,207
+AntiAlias=0
+Hidden=1
+Group=StreamDay
+
+[StreamYesButton]
+Meter=Image
+X=(32 + #StreamDayWindowOffset#)
+Y=(165 + #StreamDayWindowOffset#)
+ImageName=#@#\Images\Welcome\button.png
+LeftMouseUpAction=[Play "#@#Audio\execute.wav"][!HideMeterGroup Activity][!WriteKeyValue Variables @Include2 "Scene\Transition.inc"][!Refresh]
+Hidden=1
+Group=StreamDay
+
+[StreamYes]
+Meter=String
+X=100r
+Y=10r
+StringAlign=Center
+Text="Yes"
+FontFace=PixelMplus10
+FontSize=14
+FontColor=77,35,207
+Hidden=1
+Group=StreamDay
+
+[StreamNoButton]
+Meter=Image
+X=(272 + #StreamDayWindowOffset#)
+Y=(165 + #StreamDayWindowOffset#)
+ImageName=#@#\Images\Welcome\button.png
+LeftMouseUpAction=[!HideMeterGroup StreamDay][Play "#@#\Audio\close.wav"]
+Hidden=1
+Group=StreamDay
+
+[StreamNo]
+Meter=String
+X=100r
+Y=10r
+StringAlign=Center
+Text="No"
+FontFace=PixelMplus10
+FontSize=14
+FontColor=77,35,207
+Hidden=1
+Group=StreamDay
