@@ -23,7 +23,7 @@ MeasureName=MeasureBackground
 MeasureName2=ScreenHours
 MeasureName3=ScreenSaverRandomizer
 MeasureName4=Stream
-MeasureName5=NumberOfSections
+MeasureName5=NumberOfSectionsZero
 MeasureName6=Section
 MeasureName7=NumberOfFramesZero
 MeasureName8=ImageNumberCalc
@@ -54,19 +54,13 @@ OnUpdateAction=[!SetVariable Zero2 "[VariationChangeClock]"]
 DynamicVariables=1
 Group=Debug
 
-; [Clock]
-; Measure = Calc
-; Formula = Counter % 1
-; ifCondition = ScreenHours > 1200
-; ifTrueAction = [!SetOption ScreenHours Formula 0]
-; ifCondition2 = (Variation > 1) && (Stress <> -1)
-; ifTrueAction2 = [!SetOption Variation Formula 0]
-; ifCondition3 = (Variation > 1) && (Stress = -1)
-; ifTrueAction3 = [!SetOption Variation Formula 0]
-; ifCondition4 = ScreenSaverRandomizer > 2
-; ifTrueAction4 = [!SetOption ScreenSaverRandomizer Formula 0]
-; DynamicVariables=1
-; Group=Debug
+[Clock]
+Measure = Calc
+Formula = Counter % 1
+ifCondition = (Stream > 58) && (Stream <> 99999)
+ifTrueAction = [!SetOption Stream Formula 0][!UpdateMeasure Stream][!SetOption Section Formula 0][!SetVariable Frame -1][!Redraw][!CommandMeasure Animation "Execute 1"]
+DynamicVariables=1
+Group=Debug
 
 [HourIncrease]
 Meter=Image
@@ -90,12 +84,11 @@ DynamicVariables=1
 [VariationChange]
 Meter=Image
 ImageName=#@#Images\Media Player\Next.png
-LeftMouseDownAction=[!CommandMeasure Animation "Stop 1"][!UpdateMeasure Stream][!SetOption Section Formula 0][!SetVariable Frame -1][!Redraw][!CommandMeasure Animation "Execute 1"]
+LeftMouseDownAction=[!CommandMeasure Animation "Stop 1"][!SetOption Stream Formula [Stream]+1][!UpdateMeasure Stream][!SetOption Section Formula 0][!SetVariable Frame -1][!Redraw][!CommandMeasure Animation "Execute 1"]
 X=430
 Y=282
 ToolTipText=Change the Variation of the Sprite.
 Group=Debug
-
 
 [Edit]
 Meter=Image

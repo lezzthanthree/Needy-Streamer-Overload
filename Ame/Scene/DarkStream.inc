@@ -110,7 +110,7 @@ Formula=0
 DynamicVariables=1
 ifConditionMode=1
 ifCondition=Section >= NumberOfSections
-ifTrueAction=[!SetOption KAngel Path "#@#Images\Ame\sprites\stream\99999"][!SetOption ImageNumberCalc Formula 0][!Redraw][!CommandMeasure Animation "Stop 1"][Play "#@#\Audio\bluescreen.wav"][!SetOption Activities LeftMouseUpAction """[!SetOption MeasureBackground Formula 3654][!HideMeter KAngel][PlayLoop "#@#\Audio\horrornoise.wav"][!Redraw][!SetOption Activities LeftMouseUpAction """[!CommandMeasure EndStream "Execute 1"]"""]"""][!UpdateMeasure Activities][!DisableMeasure "Section"]
+ifTrueAction=[!SetOption KAngel Path "#@#Images\Ame\sprites\stream\99999"][!SetOption ImageNumberCalc Formula 0][!Redraw][!CommandMeasure Animation "Stop 1"][Play "#@#\Audio\bluescreen.wav"][!SetOption Activities LeftMouseUpAction """[!SetOption MeasureBackground Formula 3654][!HideMeter ScreenSaver][!HideMeter KAngel][PlayLoop "#@#\Audio\horrornoise.wav"][!Redraw][!SetOption Activities LeftMouseUpAction """[!CommandMeasure EndStream "Execute 1"]"""]"""][!UpdateMeasure Activities][!DisableMeasure "Section"]
 ifFalseAction=[!CommandMeasure Animation "Execute 1"]
 
 [NumberOfFrames]
