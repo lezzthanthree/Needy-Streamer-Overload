@@ -1,25 +1,12 @@
 [Rainmeter]
 Update=-1
 
-[Background]
-Meter=IMAGE
-ImageName=#@#Images\Ame\385
-AntiAlias=1
-
-[WindowTitles]
-Meter=STRING
-Text="Notice"
-FontFace=DinkieBitmap 7px
-X=34
-Y=14
-FontSize=12
-FontColor=77,35,207
+[Variables]
+@Include=#@#\Window\SizeFG.inc
+Height=(253/387*#Width#)
+TitleText="Webcam"
 
 [Close]
-Meter=IMAGE
-X=(#Width# - 16)
-Y=11
-ImageName=#@#Images\button_close.png
 LeftMouseUpAction=[Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
 
 [DarkenBG]

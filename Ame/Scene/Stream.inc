@@ -8,7 +8,14 @@ Update=250
 OnRefreshAction=[!CommandMeasure "Script" "NewStream()"][!CommandMeasure Animation "Execute 1"]
 
 [Variables]
-@Include="#@#\Settings\Ame\Task Manager - Stream.inc"
+; Change Ame's Sprite to playing/watching when a program has detected.
+@Include=#@#\Window\SizeFG.inc
+; Ame's width is the width subtracted by 2
+Width=387
+Height=(253/387*#Width#)
+TitleText="Webcam"
+
+@Include2="#@#\Settings\Ame\Task Manager - Stream.inc"
 
 SpritePath=#@#Images\Ame\sprites\stream\[Stream]\[Section]
 
@@ -16,27 +23,7 @@ Frame = -1
 
 NumberOfStreams = 58 ; ZERO-BASED INDEXING.
 
-; ===== Window =====
-
-[Background]
-Meter=IMAGE
-ImageName=#@#Images\Ame\#Width#.png
-AntiAlias=1
-
-[WindowTitles]
-Meter=STRING
-Text="Stream"
-FontFace=DinkieBitmap 7px
-X=34
-Y=14
-FontSize=12
-FontColor=77,35,207
-
 [Close]
-Meter=IMAGE
-X=(#Width# - 16)
-Y=11
-ImageName=#@#Images\button_close.png
 LeftMouseUpAction=[!SetOption ImageNumberCalc Formula 0][!SetOption Ame Path "#@#Images\Ame\sprites\"][!WriteKeyValue Variables @Include2 "Scene\Ame.inc"][Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
 
 [Settings]
@@ -64,7 +51,7 @@ X=8
 Y=42
 DynamicVariables=1
 Path=#@#Images\Ame\bg\
-W=#Width#
+W=(#Width#-2)
 AntiAlias=1
 
 [ScreenSaverRandomizer]
@@ -79,7 +66,7 @@ MeasureName=ScreenSaverRandomizer
 X=8
 Y=42
 Path=#@#Images\Ame\bg_screensaver\
-W=#Width#
+W=(#Width#-2)
 DynamicVariables=1
 AntiAlias=1
 
@@ -137,7 +124,7 @@ DynamicVariables=1
 X=8
 Y=42
 Path=#SpritePath#
-W=#Width#
+W=(#Width#-2)
 AntiAlias=1
 
 [Animation]
