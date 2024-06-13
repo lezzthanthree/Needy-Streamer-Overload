@@ -72,6 +72,9 @@ Pictures from KAngel and Ame from the game, now on your desktop!
 - [🎀超絶最かわ🎀てんしちゃん](https://twitter.com/x_angelkawaii_x) and [にゃるら](https://twitter.com/nyalra) from Twitter.
 
 ## Media Player
+> [!NOTE]
+> Spotify and iTunes modules are currently broken! Please wait for a fix~
+
 Media Player shows what you are listening. Redesigned by @YumeMiya!
 
 ![Media Player](Preview/Showcase/Media%20Player%20Preview.gif)
