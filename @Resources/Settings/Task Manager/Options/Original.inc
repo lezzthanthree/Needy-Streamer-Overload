@@ -44,3 +44,7 @@ Text="Mental Darkness"
 [DiskTooltipText]
 Text=this lets you know how im doing mentally. how well i cope with reality will change depending on the numbers. it might have a bigger influence on my future rather than my present state in the game!
 Y=197
+
+[DescriptionVisibilityOption]
+Measure=Calc
+Formula=0
