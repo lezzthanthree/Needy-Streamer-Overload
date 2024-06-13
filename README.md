@@ -73,7 +73,7 @@ Pictures from KAngel and Ame from the game, now on your desktop!
 
 ## Media Player
 > [!NOTE]
-> Spotify and iTunes modules are currently broken! Please wait for a fix~
+> There has been a bug currently on Spotify where the music information are not showing. [See here for the issue.](https://github.com/lezzthanthree/Needy-Streamer-Overload/issues/1)
 
 Media Player shows what you are listening. Redesigned by @YumeMiya!
 
