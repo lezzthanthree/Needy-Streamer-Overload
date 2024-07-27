@@ -7,8 +7,8 @@ Format="%3!02i!"
 
 [MeasureFollowers]
 Measure=Calc
-Formula=(ScreenTime/3600)*1000
-IfCondition = MeasureFollowers < 85
+Formula=ScreenTime
+IfCondition = MeasureFollowers < 300
 IfTrueAction = [Play "#@#\Audio\boot.wav"] 
 
 [MeterScreenTime]
