@@ -22,6 +22,8 @@ To get the skin, you need to install Rainmeter. Go to this [page](https://www.ra
 
 Once done, you can download the `.rmskin` file on the [Releases](https://github.com/lezzthanthree/Needy-Streamer-Overload/releases). A Welcome Skin will greet you once you have installed the skin!
 
+If you wish to install the skin through cloning the repo, please remove all hyphens (`-`) from `Needy-Streamer-Overload`.
+
 # Features
 ## Task Manager
 Task Manager shows information about your computer performance (Uptime, CPU, RAM, and Disk Space). It is heavily inspired by the Task Manager from the game.  
@@ -72,6 +74,9 @@ Pictures from KAngel and Ame from the game, now on your desktop!
 - [🎀超絶最かわ🎀てんしちゃん](https://twitter.com/x_angelkawaii_x) and [にゃるら](https://twitter.com/nyalra) from Twitter.
 
 ## Media Player
+> [!NOTE]
+> There has been a bug currently on Spotify where the music information are not showing. [See here for the issue.](https://github.com/lezzthanthree/Needy-Streamer-Overload/issues/1)
+
 Media Player shows what you are listening. Redesigned by @YumeMiya!
 
 ![Media Player](Preview/Showcase/Media%20Player%20Preview.gif)

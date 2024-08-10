@@ -1,3 +1,3 @@
 [Variables]
 DiskLocation=C
-@Include="#@#\Settings\Task Manager\Options\SystemInfo.inc"
+@Include=Options\SystemInfo.inc

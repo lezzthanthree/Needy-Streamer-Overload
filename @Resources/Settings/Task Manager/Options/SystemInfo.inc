@@ -42,3 +42,6 @@ Text=Used Space (#DiskLocation#:)
 Text=your used space shows how much of your files have occupied your disk. if you keep this high, ame would be overwhelmed by organizing your messy files.
 Y=203
 
+[DescriptionVisibilityOption]
+Measure=Calc
+Formula=1

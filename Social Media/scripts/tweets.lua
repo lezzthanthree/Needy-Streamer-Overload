@@ -844,6 +844,142 @@ function Initialize()
               "https://twitter.com/nyalra/status/1688513704940511232"
              }
 
+    a[110] = {
+              "A ray of light, illuminating the chaotic internet of today. Bringing happiness to the otaku floating in this electronic sea! A promise of future peace; manic and moody but it's alright, the Internet Angel has descended!",
+              350,
+              300,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1716464584360657019/"
+             }
+             
+    a[111] = {
+              "",
+              200,
+              150,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1706276245166858580/"
+             }
+
+    a[112] = {
+              "",
+              200,
+              150,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1711341970210373761/"
+             }
+
+    a[113] = {
+              "Chains ~Fallen Angel~",
+              250,
+              150,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1736759246753349667/"
+             }
+
+    a[114] = {
+              "Today's a holy night",
+              200,
+              200,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1738915204245995914/"
+             }
+
+    a[115] = {
+              "I just went to the commemorative live broadcast! Today's NEEDY STREAMER's 2nd Anniversary! Happy 2nd Birthday, KAngel!!",
+              200,
+              200,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1749032925155430586/"
+             }
+
+    a[116] = {
+              "Moon Rainbow Butterfly",
+              200,
+              200,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1754864505128145159/"
+             }
+
+    a[117] = {
+              "My White Day Gift",
+              350,
+              300,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1767933880693350437/"
+             }
+
+    a[118] = {
+              "INTERNET IS FUCKING AWESOME!",
+              400,
+              350,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1771894360550076610/"
+             }
+
+    a[119] = {
+              "I'll be shaking hands with Puppet KAngel in Makuhari this end of the month!",
+              250,
+              100,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1782468793106825657/"
+             }
+
+    a[120] = {
+              "",
+              200,
+              150,
+              "@x_angelkawaii_x",
+              "https://x.com/x_angelkawaii_x/status/1790379588410876131/"
+             }
+
+    a[121] = {
+              "",
+              0,
+              0,
+              "@raincandy_U",
+              "https://x.com/nyalra/status/1797663832355344592/"
+             }
+
+    a[122] = {
+              "Gyaru Twin Kawaii!",
+              0,
+              0,
+              "@raincandy_U",
+              "https://x.com/nyalra/status/1792619511151026509/"
+             }
+
+    a[123] = {
+              "Brain Damage",
+              0,
+              0,
+              "@raincandy_U",
+              "https://x.com/nyalra/status/1777296807988703741/"
+             }
+
+    a[124] = {
+              "",
+              0,
+              0,
+              "@raincandy_U",
+              "https://x.com/nyalra/status/1729113872513262031/"
+             }
+
+    a[125] = {
+              "I will never allow boring adults to bind people with vague ideas of right and wrong, and I will sing rock and roll to my lonely neighbors for the sake of freedom.",
+              0,
+              0,
+              "@raincandy_U",
+              "https://x.com/nyalra/status/1770460597928521919/"
+             }
+
+    a[126] = {
+              "",
+              0,
+              0,
+              "@raincandy_U",
+              "https://x.com/nyalra/status/1701219790931849593/"
+             }
+
 
              
     end
