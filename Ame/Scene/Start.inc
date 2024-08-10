@@ -3,6 +3,7 @@ Update=-1
 
 [Variables]
 @Include=#@#\Window\SizeFG.inc
+Width=387
 Height=(253/387*#Width#)
 TitleText="Webcam"
 

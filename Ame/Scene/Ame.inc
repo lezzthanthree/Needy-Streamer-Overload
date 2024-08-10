@@ -12,14 +12,13 @@ SpritePath=#@#\Images\Ame\sprites\[Stress]\[Affection]\[Darkness]\[Variation]
 ; Change Ame's Sprite to playing/watching when a program has detected.
 @Include=#@#\Window\SizeFG.inc
 ; Ame's width is the width subtracted by 2
-Width=387
 Height=(253/387*#Width#)
 TitleText="Webcam"
 
 @Include2=#@#\Settings\Ame\Programs.inc
 @Include3=#@#\Settings\Ame\Task Manager.inc
 
-ActivityWindowOffset=40
+ActivityWindowOffset=55
 StreamDayWindowOffset=80
 
 ; ===== Window =====

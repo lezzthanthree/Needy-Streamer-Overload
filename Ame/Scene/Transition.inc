@@ -14,10 +14,8 @@ License=Creative Commons Attribution - Non - Commercial - Share Alike 3.0
 Zero=-1
 
 @Include=#@#\Window\SizeFG.inc
-Width=387
 Height=(290/387*#Width#)
 TitleText="Transform!"
-
 
 [Title]
 LeftMouseUpAction=[!SetOption Transformation Path "#@#\Images\Ame\transformation_dark"][!SetOption Animation Close """[!CommandMeasure ActionTimer "Stop 1"][!WriteKeyValue Variables @Include2 "Scene\DarkStream.inc"][!Refresh]"""][!UpdateMeasure Animation][!Redraw]

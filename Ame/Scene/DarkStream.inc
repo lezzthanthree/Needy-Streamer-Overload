@@ -10,7 +10,6 @@ OnRefreshAction=[!CommandMeasure "Script" "NewStream()"][!CommandMeasure Animati
 [Variables]
 @Include=#@#\Window\SizeFG.inc
 ; Ame's width is the width subtracted by 2
-Width=387
 Height=(253/387*#Width#)
 TitleText="Webcam"
 
