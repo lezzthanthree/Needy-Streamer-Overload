@@ -13,26 +13,14 @@ License=Creative Commons Attribution - Non - Commercial - Share Alike 3.0
 [Variables]
 Zero=-1
 
-[Background]
-Meter=IMAGE
-ImageName=#@#Images\Ame\transformation_#Width#.png
-AntiAlias=1
+@Include=#@#\Window\SizeFG.inc
+Height=(290/387*#Width#)
+TitleText="Transform!"
 
-[WindowTitles]
-Meter=STRING
-Text="Transform!"
-FontFace=DinkieBitmap 7px
+[Title]
 LeftMouseUpAction=[!SetOption Transformation Path "#@#\Images\Ame\transformation_dark"][!SetOption Animation Close """[!CommandMeasure ActionTimer "Stop 1"][!WriteKeyValue Variables @Include2 "Scene\DarkStream.inc"][!Refresh]"""][!UpdateMeasure Animation][!Redraw]
-X=34
-Y=14
-FontSize=12
-FontColor=77,35,207
 
 [Close]
-Meter=IMAGE
-X=(#Width# - 16)
-Y=11
-ImageName=#@#Images\button_close.png
 LeftMouseUpAction=[!CommandMeasure ActionTimer "Stop 1"][Play "#@#\Audio\open.wav"][!WriteKeyValue Variables @Include2 "Scene\Stream.inc"][!Refresh]
 
 ; ===== Transition Animation =====
@@ -49,7 +37,7 @@ X=8
 Y=42
 LeftMouseUpAction=[!CommandMeasure ActionTimer "Stop 1"][Play "#@#\Audio\open.wav"][!WriteKeyValue Variables @Include2 "Scene\Stream.inc"][!Refresh]
 Path=#@#\Images\Ame\transformation
-W=#Width#
+W=(#Width#-2)
 DynamicVariables=1
 AntiAlias=1
 

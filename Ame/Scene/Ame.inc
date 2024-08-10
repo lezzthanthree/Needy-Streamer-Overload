@@ -10,33 +10,20 @@ Update=250
 SpritePath=#@#\Images\Ame\sprites\[Stress]\[Affection]\[Darkness]\[Variation]
 
 ; Change Ame's Sprite to playing/watching when a program has detected.
-@Include=#@#\Settings\Ame\Programs.inc
-@Include2=#@#\Settings\Ame\Task Manager.inc
+@Include=#@#\Window\SizeFG.inc
+; Ame's width is the width subtracted by 2
+Height=(253/387*#Width#)
+TitleText="Webcam"
 
-ActivityWindowOffset=40
+@Include2=#@#\Settings\Ame\Programs.inc
+@Include3=#@#\Settings\Ame\Task Manager.inc
+
+ActivityWindowOffset=55
 StreamDayWindowOffset=80
 
 ; ===== Window =====
 
-[Background]
-Meter=IMAGE
-ImageName=#@#Images\Ame\#Width#
-AntiAlias=1
-
-[WindowTitles]
-Meter=STRING
-Text="Webcam"
-FontFace=DinkieBitmap 7px
-X=34
-Y=14
-FontSize=12
-FontColor=77,35,207
-
 [Close]
-Meter=IMAGE
-X=(#Width# - 16)
-Y=11
-ImageName=#@#Images\button_close.png
 LeftMouseUpAction=[!SetOption ImageNumberCalc Formula 0][!SetOption Ame Path "#@#Images\Ame\sprites\stream"][Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
 
 [Settings]
@@ -64,7 +51,7 @@ X=8
 Y=42
 DynamicVariables=1
 Path=#@#Images\Ame\bg\
-W=#Width#
+W=(#Width#-2)
 AntiAlias=1
 
 [ScreenSaverRandomizer]
@@ -79,7 +66,7 @@ MeasureName=ScreenSaverRandomizer
 X=8
 Y=42
 Path=#@#Images\Ame\bg_screensaver\
-W=#Width#
+W=(#Width#-2)
 DynamicVariables=1
 AntiAlias=1
 
@@ -112,7 +99,7 @@ DynamicVariables=1
 X=8
 Y=42
 Path=#SpritePath#
-W=#Width#
+W=(#Width#-2)
 AntiAlias=1
 
 ; ===== Headpat ===== 

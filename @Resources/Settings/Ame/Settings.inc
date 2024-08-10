@@ -2,6 +2,10 @@
 StressToggleValue=0
 AffectionToggleValue=0
 DarknessToggleValue=0
+Width=387
+; Change to overide default width of 387.
+; To disable Ame's Anti-Aliasing, the width must be divisible by 350
+; THE LARGE THE NUMBER, THE HEAVIER IT LOADS. BE CAREFUL.
 
 [DisableCPU]
 Measure=Calc
