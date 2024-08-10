@@ -1,2 +1,2 @@
 [Variables]
-@Include=Marquee\NonMarquee.inc
+@Include=Marquee\Marquee.inc

@@ -5,4 +5,4 @@ Title=Quick Notes
 [FontSize]
 Measure=Calc
 DynamicVariables=1
-Formula=10
+Formula=8+1

@@ -6,10 +6,10 @@
 ; Borrowed code from the Persona 5 Calendar Rainmeter Skin.
 ; https://github.com/Mive82/Persona-5-Calendar
 
-LocationCode=Paste Here!
+LocationCode=2013348
 
 ; You also have to get a free API key by registering
-ApiKey=Paste Here!
+ApiKey=c1e4f61c8cb75c05096ec8c69493f2a8
 
 TimeFormat1224=12
 
