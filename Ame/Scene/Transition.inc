@@ -39,7 +39,7 @@ LeftMouseUpAction=[!CommandMeasure ActionTimer "Stop 1"][Play "#@#\Audio\open.wa
 Path=#@#\Images\Ame\transformation
 W=(#Width#-2)
 DynamicVariables=1
-AntiAlias=1
+AntiAlias=0
 
 [Animation]
 Measure=Plugin

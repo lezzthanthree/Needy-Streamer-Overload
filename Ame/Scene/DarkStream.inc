@@ -115,7 +115,7 @@ X=8
 Y=42
 Path=#SpritePath#
 W=(#Width#-2)
-AntiAlias=1
+AntiAlias=0
 
 [Animation]
 Measure=Plugin
