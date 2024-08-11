@@ -5,10 +5,18 @@ Update=-1
 @Include=#@#\Window\SizeFG.inc
 Width=387
 Height=(253/387*#Width#)
-TitleText="Webcam"
+TitleText="Notice"
 
 [Close]
 LeftMouseUpAction=[Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
+
+[Settings]
+Meter=IMAGE
+X=-24r
+Y=11
+ImageName=#@#Images\Ame\button_gear.png
+LeftMouseUpAction=[!ToggleConfig "Needy Streamer Overload\Ame\Settings" "WidthSettingsSpecial.ini"]
+DynamicVariables=1
 
 [DarkenBG]
 Meter=SHAPE
@@ -19,7 +27,7 @@ FillColor=FillColor 0,0,0,255
 Meter=String
 X=200
 Y=65
-Text=This skin's width is more than a third of the screen. To avoid Rainmeter from crashing, a manual prompt is needed every time you reload this.#CRLF##CRLF#If you think your PC can handle it, you can disable this prompt.
+Text=This skin's width is more than a third of the screen. To prevent Rainmeter from crashing, a manual prompt is needed every time you reload this.#CRLF##CRLF#If you think your PC can handle it, you can disable this prompt.
 clipString = 2
 W=360
 StringAlign=Center
