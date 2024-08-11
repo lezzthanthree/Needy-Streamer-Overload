@@ -28,7 +28,7 @@ FontSize=14
 FontColor=228,114,114
 AntiAlias=0
 
-[ButtonChromeOpera]
+[ButtonStartAme]
 Meter=Image
 ImageName=#@#Images\Ame\button.png
 X=103
