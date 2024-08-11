@@ -5,7 +5,7 @@ Update=-1
 @Include=#@#\Window\SizeFG.inc
 Width=387
 Height=(253/387*#Width#)
-TitleText="Webcam"
+TitleText="Start"
 
 [Close]
 LeftMouseUpAction=[Play "#@#Audio\endHaishin.wav"][!Redraw][!RainmeterDeactivateConfig]
