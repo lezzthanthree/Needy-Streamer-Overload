@@ -41,6 +41,7 @@ Y=11
 ImageName=#@#Images\Ame\button_heart.png
 LeftMouseUpAction=[!ShowMeterGroup Activity][Play "#@#\Audio\open.wav"][!Redraw]
 DynamicVariables=1
+Group=Ame
 
 ; ===== Background ===== 
 
@@ -53,6 +54,7 @@ DynamicVariables=1
 Path=#@#Images\Ame\bg\
 W=(#Width#-2)
 AntiAlias=1
+Group=Ame
 
 [ScreenSaverRandomizer]
 Measure=Calc
@@ -69,6 +71,7 @@ Path=#@#Images\Ame\bg_screensaver\
 W=(#Width#-2)
 DynamicVariables=1
 AntiAlias=1
+Group=Ame
 
 ; ===== Ame Animation ===== 
 
@@ -101,6 +104,7 @@ Y=42
 Path=#SpritePath#
 W=(#Width#-2)
 AntiAlias=1
+Group=Ame
 
 ; ===== Headpat ===== 
 
@@ -112,6 +116,7 @@ MouseOverAction=[!ShowMeter HeadpatDialogue][!SetOption HeadpatStatus Formula 0]
 MouseLeaveAction=[!HideMeter HeadpatDialogue][!SetOption HeadpatStatus Formula 0][!SetVariable SpritePath  "#@#Images\Ame\sprites\[*Stress*]\[*Affection*]\[*Darkness*]\[*Variation*]"][!Redraw]
 LeftMouseDownAction=[!SetOption HeadpatStatus Formula 1][Play "#@#\Audio\nadenade_1.wav"][!SetOption HeadpatCount Formula [HeadpatCount]+1][!ShowMeter HeadpatDialogue][!Redraw]
 MouseActionCursorName=HAND.cur
+Group=Ame
 
 [HeadpatStatus]
 Measure=Calc
@@ -365,3 +370,12 @@ FontSize=14
 FontColor=77,35,207
 Hidden=1
 Group=StreamDay
+
+; =====================
+
+[WidthCaution]
+Measure=Calc
+Formula=0
+IfCondition=(#Width# > #SCREENAREAWIDTH#/3)
+IfTrueAction=[!WriteKeyValue Variables @Include2 Scene\WidthTooLarge.inc]
+DynamicVariables=1
