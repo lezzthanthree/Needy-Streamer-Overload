@@ -18,11 +18,16 @@ Rainmeter Skins inspired by the visual novel, [NEEDY STREAMER OVERLOAD](https://
 - [Trash Bin](#trash-bin)
 
 # Rainmeter Installation
+### Simple
 To get the skin, you need to install Rainmeter. Go to this [page](https://www.rainmeter.net/) for installation.
 
 Once done, you can download the `.rmskin` file on the [Releases](https://github.com/lezzthanthree/Needy-Streamer-Overload/releases). A Welcome Skin will greet you once you have installed the skin!
 
-If you wish to install the skin through cloning the repo, please remove all hyphens (`-`) from `Needy-Streamer-Overload`.
+### Through Git Cloning
+If you wish to install the skin through cloning the repo, please remove all hyphens (`-`) from `Needy-Streamer-Overload` and clone it inside the Rainmeter folder located at Documents.
+```bash
+git clone "https://github.com/lezzthanthree/Needy-Streamer-Overload.git" "Needy Streamer Overload"
+```
 
 # Features
 ## Task Manager
