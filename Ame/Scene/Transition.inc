@@ -18,7 +18,7 @@ Height=(290/387*#Width#)
 TitleText="Transform!"
 
 [Title]
-LeftMouseUpAction=[!SetOption Transformation Path "#@#\Images\Ame\transformation_dark"][!SetOption Animation Close """[!CommandMeasure ActionTimer "Stop 1"][!WriteKeyValue Variables @Include2 "Scene\DarkStream.inc"][!Refresh]"""][!UpdateMeasure Animation][!Redraw]
+LeftMouseUpAction=[!SetOption Transformation Path "#@#\Images\Ame\transformation_dark"][!SetOption Animation Close """[!CommandMeasure ActionTimer "Stop 1"][!WriteKeyValue Variables @Include2 "Scene\TriggerWarning.inc"][!Refresh]"""][!UpdateMeasure Animation][!Redraw]
 
 [Close]
 LeftMouseUpAction=[!CommandMeasure ActionTimer "Stop 1"][Play "#@#\Audio\open.wav"][!WriteKeyValue Variables @Include2 "Scene\Stream.inc"][!Refresh]
