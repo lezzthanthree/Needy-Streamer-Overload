@@ -61,7 +61,7 @@ Meter=Image
 ImageName=#@#Images\Ame\button_half.png
 X=205
 Y=230
-LeftMouseUpAction=[!WriteKeyValue Variables @Include2 Scene\Ame.inc][!WriteKeyValue WidthCaution IfTrueAction "[Play #@#/Audio/jine_send_stamp.wav]"][Play "#@#Audio\execute.wav"][!RefreshApp]
+LeftMouseUpAction=[!WriteKeyValue Variables @Include2 Scene\Ame.inc][!WriteKeyValue WidthCaution IfTrueAction ""][Play "#@#Audio\execute.wav"][!RefreshApp]
 
 [DisablePrompt]
 Meter=String
